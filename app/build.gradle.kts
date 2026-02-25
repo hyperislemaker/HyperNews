@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.telegramstyle.newsapp"
+    namespace = "com.hypernews.app"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.example.telegramstyle.newsapp"
+        applicationId = "com.hypernews.app"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1

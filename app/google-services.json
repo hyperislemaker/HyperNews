@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "000000000000",
-    "project_id": "telegram-news-app-placeholder",
-    "storage_bucket": "telegram-news-app-placeholder.appspot.com"
+    "project_id": "hypernews-placeholder",
+    "storage_bucket": "hypernews-placeholder.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
         "android_client_info": {
-          "package_name": "com.example.telegramstyle.newsapp"
+          "package_name": "com.hypernews.app"
         }
       },
       "oauth_client": [],
@@ -28,7 +28,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:000000000000:android:0000000000000000000001",
         "android_client_info": {
-          "package_name": "com.example.telegramstyle.newsapp.debug"
+          "package_name": "com.hypernews.app.debug"
         }
       },
       "oauth_client": [],

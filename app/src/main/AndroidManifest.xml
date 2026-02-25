@@ -42,7 +42,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TelegramStyleNewsApp"
+        android:theme="@style/Theme.HyperNews"
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
 
@@ -50,7 +50,7 @@
         <activity
             android:name=".presentation.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.TelegramStyleNewsApp.Splash"
+            android:theme="@style/Theme.HyperNews.Splash"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,7 +64,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
                     android:host="news"
-                    android:scheme="telegramstyle" />
+                    android:scheme="hypernews" />
             </intent-filter>
         </activity>
 

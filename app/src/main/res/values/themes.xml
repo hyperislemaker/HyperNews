@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme -->
-    <style name="Theme.TelegramStyleNewsApp" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.HyperNews" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary_variant</item>
@@ -22,9 +22,9 @@
     </style>
 
     <!-- Splash screen theme -->
-    <style name="Theme.TelegramStyleNewsApp.Splash" parent="Theme.SplashScreen">
+    <style name="Theme.HyperNews.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/background_dark</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
-        <item name="postSplashScreenTheme">@style/Theme.TelegramStyleNewsApp</item>
+        <item name="postSplashScreenTheme">@style/Theme.HyperNews</item>
     </style>
 </resources>
