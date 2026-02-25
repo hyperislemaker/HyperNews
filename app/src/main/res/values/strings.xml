@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Telegram Style News</string>
+    
+    <!-- Navigation -->
+    <string name="nav_feed">Haberler</string>
+    <string name="nav_favorites">Favoriler</string>
+    <string name="nav_search">Arama</string>
+    <string name="nav_settings">Ayarlar</string>
+    
+    <!-- Common -->
+    <string name="loading">Yükleniyor…</string>
+    <string name="retry">Tekrar Dene</string>
+    <string name="cancel">İptal</string>
+    <string name="save">Kaydet</string>
+    <string name="delete">Sil</string>
+    <string name="edit">Düzenle</string>
+    <string name="share">Paylaş</string>
+    <string name="close">Kapat</string>
+    
+    <!-- Errors -->
+    <string name="error_network">İnternet bağlantısı bulunamadı</string>
+    <string name="error_server">Sunucu hatası oluştu</string>
+    <string name="error_unknown">Bilinmeyen bir hata oluştu</string>
+    <string name="error_no_results">Sonuç bulunamadı</string>
+    
+    <!-- News Feed -->
+    <string name="breaking_news">SON DAKİKA</string>
+    <string name="offline_mode">Çevrimdışı</string>
+    <string name="pull_to_refresh">Yenilemek için aşağı çekin</string>
+    
+    <!-- Comments -->
+    <string name="comments">Yorumlar</string>
+    <string name="comment_placeholder">Fikrinizi paylaşın…</string>
+    <string name="comment_edited">Düzenlendi</string>
+    <string name="comment_report">Bildir</string>
+    <string name="comment_delete_confirm">Bu yorumu silmek istediğinizden emin misiniz?</string>
+    
+    <!-- Reactions -->
+    <string name="reaction_like">Beğendim</string>
+    <string name="reaction_love">Sevdim</string>
+    <string name="reaction_wow">Şaşırdım</string>
+    <string name="reaction_sad">Üzüldüm</string>
+    <string name="reaction_angry">Kızdım</string>
+    <string name="reaction_thinking">Düşündürücü</string>
+    
+    <!-- Auth -->
+    <string name="sign_in">Giriş Yap</string>
+    <string name="sign_out">Çıkış Yap</string>
+    <string name="sign_in_google">Google ile Giriş Yap</string>
+    <string name="sign_in_email">E-posta ile Giriş Yap</string>
+    <string name="sign_up">Kayıt Ol</string>
+    
+    <!-- Profile -->
+    <string name="profile">Profil</string>
+    <string name="username">Kullanıcı Adı</string>
+    <string name="username_hint">3–20 karakter, harf, rakam ve alt çizgi</string>
+    <string name="username_taken">Bu kullanıcı adı zaten kullanılıyor</string>
+    <string name="profile_photo">Profil Fotoğrafı</string>
+    
+    <!-- Settings -->
+    <string name="settings_theme">Tema</string>
+    <string name="settings_theme_dark">Karanlık</string>
+    <string name="settings_theme_light">Aydınlık</string>
+    <string name="settings_theme_system">Sistem</string>
+    <string name="settings_notifications">Bildirimler</string>
+    <string name="settings_hyperisle">HyperIsle</string>
+    <string name="settings_update_interval">Güncelleme Aralığı</string>
+    <string name="settings_clear_cache">Önbelleği Temizle</string>
+    <string name="settings_about">Hakkında</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_general">Genel Haberler</string>
+    <string name="notification_channel_breaking">Son Dakika</string>
+    
+    <!-- Premium -->
+    <string name="premium">Premium</string>
+    <string name="premium_monthly">Aylık</string>
+    <string name="premium_yearly">Yıllık</string>
+    <string name="premium_trial">7 Gün Ücretsiz Deneme</string>
+    
+    <!-- Accessibility -->
+    <string name="cd_news_image">Haber görseli</string>
+    <string name="cd_favorite_button">Favorilere ekle</string>
+    <string name="cd_share_button">Paylaş</string>
+    <string name="cd_back_button">Geri</string>
+    <string name="cd_close_button">Kapat</string>
+    <string name="cd_search_button">Ara</string>
+    <string name="cd_settings_button">Ayarlar</string>
+</resources>

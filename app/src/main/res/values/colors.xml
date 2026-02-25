@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- HyperOS Dark Theme Colors -->
+    <color name="primary">#FF4A90D9</color>
+    <color name="primary_variant">#FF3A7BC8</color>
+    <color name="secondary">#FF6C63FF</color>
+    <color name="secondary_variant">#FF5B52EE</color>
+    
+    <!-- Background Colors -->
+    <color name="background_dark">#FF0D0D0D</color>
+    <color name="background_light">#FFFAFAFA</color>
+    <color name="surface_dark">#FF1A1A1A</color>
+    <color name="surface_light">#FFFFFFFF</color>
+    <color name="surface_variant_dark">#FF2A2A2A</color>
+    <color name="surface_variant_light">#FFF5F5F5</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary_dark">#FFFFFFFF</color>
+    <color name="text_primary_light">#FF1A1A1A</color>
+    <color name="text_secondary_dark">#FFB3B3B3</color>
+    <color name="text_secondary_light">#FF666666</color>
+    
+    <!-- Accent Colors -->
+    <color name="accent_blue">#FF4A90D9</color>
+    <color name="accent_green">#FF4CAF50</color>
+    <color name="accent_red">#FFEF5350</color>
+    <color name="accent_orange">#FFFF9800</color>
+    <color name="accent_purple">#FF9C27B0</color>
+    
+    <!-- Reaction Colors -->
+    <color name="reaction_like">#FF4A90D9</color>
+    <color name="reaction_love">#FFEF5350</color>
+    <color name="reaction_wow">#FFFFCA28</color>
+    <color name="reaction_sad">#FF42A5F5</color>
+    <color name="reaction_angry">#FFFF7043</color>
+    <color name="reaction_thinking">#FF66BB6A</color>
+    
+    <!-- Breaking News -->
+    <color name="breaking_news_badge">#FFEF5350</color>
+    <color name="breaking_news_text">#FFFFFFFF</color>
+    
+    <!-- Notification -->
+    <color name="notification_color">#FF4A90D9</color>
+    
+    <!-- Stroke/Border -->
+    <color name="stroke_dark">#FF333333</color>
+    <color name="stroke_light">#FFE0E0E0</color>
+    
+    <!-- Error -->
+    <color name="error">#FFEF5350</color>
+    <color name="error_container">#FF2D1F1F</color>
+    
+    <!-- Success -->
+    <color name="success">#FF4CAF50</color>
+    <color name="success_container">#FF1F2D1F</color>
+</resources>

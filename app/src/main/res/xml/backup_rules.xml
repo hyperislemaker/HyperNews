@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Sample backup rules file; uncomment and customize as necessary.
+   See https://developer.android.com/guide/topics/data/autobackup
+   for details.
+   Note: This file is ignored for devices running API 31+ because
+   android:dataExtractionRules is used instead.
+-->
+<full-backup-content>
+    <!-- Backup user preferences -->
+    <include domain="sharedpref" path="." />
+    <!-- Exclude cache and temporary files -->
+    <exclude domain="cache" path="." />
+    <exclude domain="no_backup" path="." />
+    <!-- Exclude database files (will be synced from Firebase) -->
+    <exclude domain="database" path="." />
+</full-backup-content>
