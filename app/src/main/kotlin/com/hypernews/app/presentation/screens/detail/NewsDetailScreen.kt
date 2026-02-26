@@ -29,6 +29,7 @@ import java.time.format.DateTimeFormatter
 fun NewsDetailScreen(
     newsId: String,
     onNavigateBack: () -> Unit,
+    onOpenArticle: (url: String, title: String) -> Unit,
     viewModel: NewsDetailViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -162,39 +163,16 @@ fun NewsDetailScreen(
                             
                             Spacer(Modifier.height(16.dp))
                             
-                            // Haberin Tamamını Oku butonu
-                            var showFullContent by remember { mutableStateOf(false) }
-                            
-                            if (!showFullContent) {
-                                FilledTonalButton(
-                                    onClick = { showFullContent = true },
-                                    modifier = Modifier.fillMaxWidth()
-                                ) {
-                                    Icon(Icons.Default.Article, null)
-                                    Spacer(Modifier.width(8.dp))
-                                    Text("Haberin Tamamını Oku")
-                                }
-                            } else {
-                                // Tam içerik göster (özet zaten gösterildi, burada kaynak linki vurgula)
-                                Card(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    colors = CardDefaults.cardColors(
-                                        containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
-                                    )
-                                ) {
-                                    Column(modifier = Modifier.padding(16.dp)) {
-                                        Text(
-                                            "📰 Haberin tam içeriği için kaynağa gidin",
-                                            style = MaterialTheme.typography.bodyMedium
-                                        )
-                                        Spacer(Modifier.height(8.dp))
-                                        Text(
-                                            news.sourceUrl,
-                                            style = MaterialTheme.typography.bodySmall,
-                                            color = MaterialTheme.colorScheme.primary
-                                        )
-                                    }
-                                }
+                            // Haberin Tamamını Oku butonu - WebView ile aç
+                            FilledTonalButton(
+                                onClick = {
+                                    onOpenArticle(news.sourceUrl, news.title)
+                                },
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Icon(Icons.Default.Article, null)
+                                Spacer(Modifier.width(8.dp))
+                                Text("Haberin Tamamını Oku")
                             }
                             
                             Spacer(Modifier.height(16.dp))

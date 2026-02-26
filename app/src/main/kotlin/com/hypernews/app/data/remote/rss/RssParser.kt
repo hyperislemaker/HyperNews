@@ -40,12 +40,18 @@ class RssParser @Inject constructor() {
                 val newsItems = feed.entries.mapNotNull { entry ->
                     try {
                         val pubDate = entry.publishedDate?.toInstant() ?: Instant.now()
+                        val link = entry.link ?: return@mapNotNull null
+                        val title = entry.title?.trim() ?: return@mapNotNull null
+                        
+                        // ID'yi link + title kombinasyonundan oluştur (daha benzersiz)
+                        val uniqueId = UUID.nameUUIDFromBytes("${link}_${title}".toByteArray()).toString()
+                        
                         NewsItem(
-                            id = UUID.nameUUIDFromBytes("${feedId}_${entry.link}".toByteArray()).toString(),
-                            title = entry.title?.trim() ?: return@mapNotNull null,
+                            id = uniqueId,
+                            title = title,
                             summary = extractSummary(entry.description?.value ?: entry.contents.firstOrNull()?.value ?: ""),
                             imageUrl = extractImageUrl(entry),
-                            sourceUrl = entry.link ?: return@mapNotNull null,
+                            sourceUrl = link,
                             sourceName = feedName,
                             publishedDate = pubDate,
                             isBreakingNews = false,
@@ -57,7 +63,7 @@ class RssParser @Inject constructor() {
                     } catch (e: Exception) {
                         null
                     }
-                }
+                }.distinctBy { it.id } // Duplicate'leri filtrele
                 return@withContext Result.Success(newsItems)
             } catch (e: Exception) {
                 lastError = e

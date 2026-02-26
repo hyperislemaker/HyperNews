@@ -35,9 +35,20 @@ class NewsFeedViewModel @Inject constructor(
     val uiState: StateFlow<NewsFeedUiState> = _uiState.asStateFlow()
     
     init {
+        cleanupDuplicates()
         observeNews()
         observeConnectivity()
         refresh()
+    }
+    
+    private fun cleanupDuplicates() {
+        viewModelScope.launch {
+            try {
+                newsItemDao.deleteDuplicateNews()
+            } catch (e: Exception) {
+                // Ignore cleanup errors
+            }
+        }
     }
     
     private fun observeNews() {

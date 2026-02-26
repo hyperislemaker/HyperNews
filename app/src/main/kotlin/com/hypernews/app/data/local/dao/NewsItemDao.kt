@@ -94,4 +94,13 @@ interface NewsItemDao {
 
     @Query("DELETE FROM news_items WHERE source_name NOT IN (SELECT name FROM rss_feeds WHERE is_active = 1) AND is_favorite = 0")
     suspend fun deleteNewsFromInactiveFeeds()
+
+    @Query("""
+        DELETE FROM news_items 
+        WHERE id NOT IN (
+            SELECT MIN(id) FROM news_items 
+            GROUP BY title, source_url
+        ) AND is_favorite = 0
+    """)
+    suspend fun deleteDuplicateNews()
 }

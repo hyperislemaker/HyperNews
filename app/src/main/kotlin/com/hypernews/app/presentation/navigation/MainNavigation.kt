@@ -29,6 +29,10 @@ import com.hypernews.app.presentation.screens.profile.ProfileScreen
 import com.hypernews.app.presentation.screens.rss.RssManagementScreen
 import com.hypernews.app.presentation.screens.search.SearchScreen
 import com.hypernews.app.presentation.screens.settings.SettingsScreen
+import com.hypernews.app.presentation.screens.webview.ArticleWebViewScreen
+import java.net.URLDecoder
+import java.net.URLEncoder
+import java.nio.charset.StandardCharsets
 
 sealed class Screen(val route: String) {
     data object Splash : Screen("splash")
@@ -45,6 +49,13 @@ sealed class Screen(val route: String) {
     data object Profile : Screen("profile")
     data object RssManagement : Screen("rss_management")
     data object AdminPanel : Screen("admin_panel")
+    data object ArticleWebView : Screen("article_webview/{url}/{title}") {
+        fun createRoute(url: String, title: String): String {
+            val encodedUrl = URLEncoder.encode(url, StandardCharsets.UTF_8.toString())
+            val encodedTitle = URLEncoder.encode(title, StandardCharsets.UTF_8.toString())
+            return "article_webview/$encodedUrl/$encodedTitle"
+        }
+    }
 }
 
 sealed class BottomNavItem(
@@ -212,7 +223,10 @@ fun MainNavigation(
                 val newsId = backStackEntry.arguments?.getString("newsId") ?: return@composable
                 NewsDetailScreen(
                     newsId = newsId,
-                    onNavigateBack = { navController.popBackStack() }
+                    onNavigateBack = { navController.popBackStack() },
+                    onOpenArticle = { url, title ->
+                        navController.navigate(Screen.ArticleWebView.createRoute(url, title))
+                    }
                 )
             }
 
@@ -235,6 +249,24 @@ fun MainNavigation(
 
             composable(Screen.AdminPanel.route) {
                 AdminPanelScreen(
+                    onNavigateBack = { navController.popBackStack() }
+                )
+            }
+
+            composable(
+                route = Screen.ArticleWebView.route,
+                arguments = listOf(
+                    navArgument("url") { type = NavType.StringType },
+                    navArgument("title") { type = NavType.StringType }
+                )
+            ) { backStackEntry ->
+                val encodedUrl = backStackEntry.arguments?.getString("url") ?: return@composable
+                val encodedTitle = backStackEntry.arguments?.getString("title") ?: ""
+                val url = URLDecoder.decode(encodedUrl, StandardCharsets.UTF_8.toString())
+                val title = URLDecoder.decode(encodedTitle, StandardCharsets.UTF_8.toString())
+                ArticleWebViewScreen(
+                    url = url,
+                    title = title,
                     onNavigateBack = { navController.popBackStack() }
                 )
             }
