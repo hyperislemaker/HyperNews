@@ -81,6 +81,17 @@ interface NewsItemDao {
     @Query("SELECT * FROM news_items ORDER BY published_date DESC")
     fun getAllNews(): Flow<List<NewsItemEntity>>
 
+    @Query("""
+        SELECT n.* FROM news_items n
+        INNER JOIN rss_feeds f ON n.source_name = f.name
+        WHERE f.is_active = 1
+        ORDER BY n.published_date DESC
+    """)
+    fun getNewsFromActiveFeeds(): Flow<List<NewsItemEntity>>
+
     @Query("UPDATE news_items SET is_favorite = NOT is_favorite WHERE id = :id")
     suspend fun toggleFavorite(id: String)
+
+    @Query("DELETE FROM news_items WHERE source_name NOT IN (SELECT name FROM rss_feeds WHERE is_active = 1) AND is_favorite = 0")
+    suspend fun deleteNewsFromInactiveFeeds()
 }

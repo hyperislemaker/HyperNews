@@ -31,7 +31,7 @@ class NewsSyncWorker @AssistedInject constructor(
     
     companion object {
         const val WORK_NAME = "news_sync_worker"
-        private const val DEFAULT_INTERVAL_MINUTES = 15L
+        private const val DEFAULT_INTERVAL_MINUTES = 1L // Debug için 1 dakika
         
         fun schedule(context: Context, intervalMinutes: Long = DEFAULT_INTERVAL_MINUTES) {
             val constraints = Constraints.Builder()

@@ -71,7 +71,7 @@ fun RssManagementScreen(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                items(uiState.feeds, key = { it.url }) { feed ->
+                items(uiState.feeds, key = { it.id }) { feed ->
                     RssFeedItem(
                         feed = feed,
                         onToggleNotification = { viewModel.toggleNotification(feed) },

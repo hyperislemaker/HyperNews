@@ -1,45 +1,81 @@
 {
   "project_info": {
-    "project_number": "000000000000",
-    "project_id": "hypernews-placeholder",
-    "storage_bucket": "hypernews-placeholder.appspot.com"
+    "project_number": "306625625799",
+    "project_id": "hypernews-833ce",
+    "storage_bucket": "hypernews-833ce.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
+        "mobilesdk_app_id": "1:306625625799:android:d164372ec6582e8c0448e2",
         "android_client_info": {
           "package_name": "com.hypernews.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "306625625799-hsvb2527di6790l2kbnoultt72g52cfo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hypernews.app",
+            "certificate_hash": "3c21c8de33f1a0414c9f6bbc093b258680687e56"
+          }
+        },
+        {
+          "client_id": "306625625799-19rnfublglq1vmsov5t8ve5mqv05nk9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyPlaceholderKeyForDevelopment000"
+          "current_key": "AIzaSyAx95KHi29fPnJE5sjUu1Fee7PEfp4q5y4"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306625625799-19rnfublglq1vmsov5t8ve5mqv05nk9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:000000000000:android:0000000000000000000001",
+        "mobilesdk_app_id": "1:306625625799:android:609722a9d54a01930448e2",
         "android_client_info": {
           "package_name": "com.hypernews.app.debug"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "306625625799-meoigms93lu6jbfi5u53gqoe7ii0gcf2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hypernews.app.debug",
+            "certificate_hash": "3c21c8de33f1a0414c9f6bbc093b258680687e56"
+          }
+        },
+        {
+          "client_id": "306625625799-19rnfublglq1vmsov5t8ve5mqv05nk9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyPlaceholderKeyForDevelopment000"
+          "current_key": "AIzaSyAx95KHi29fPnJE5sjUu1Fee7PEfp4q5y4"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306625625799-19rnfublglq1vmsov5t8ve5mqv05nk9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

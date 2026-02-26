@@ -135,9 +135,19 @@ fun OnboardingScreen(
             } else {
                 Button(
                     onClick = { viewModel.completeOnboarding() },
-                    enabled = uiState.selectedFeeds.isNotEmpty()
+                    enabled = uiState.selectedFeeds.isNotEmpty() && !uiState.isLoading
                 ) {
-                    Text("Başla")
+                    if (uiState.isLoading) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(20.dp),
+                            strokeWidth = 2.dp,
+                            color = MaterialTheme.colorScheme.onPrimary
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Haberler yükleniyor...")
+                    } else {
+                        Text("Başla")
+                    }
                 }
             }
         }

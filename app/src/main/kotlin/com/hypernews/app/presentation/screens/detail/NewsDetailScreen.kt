@@ -2,6 +2,7 @@ package com.hypernews.app.presentation.screens.detail
 
 import android.content.Intent
 import android.net.Uri
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -85,13 +86,41 @@ fun NewsDetailScreen(
                         .verticalScroll(rememberScrollState())
                 ) {
                     uiState.newsItem?.let { news ->
-                        news.imageUrl?.let { url ->
-                            AsyncImage(
-                                model = url,
-                                contentDescription = news.title,
-                                modifier = Modifier.fillMaxWidth().aspectRatio(16f / 9f),
-                                contentScale = ContentScale.Crop
-                            )
+                        // Görsel alanı - her zaman göster
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .aspectRatio(16f / 9f)
+                        ) {
+                            if (news.imageUrl != null) {
+                                AsyncImage(
+                                    model = news.imageUrl,
+                                    contentDescription = news.title,
+                                    modifier = Modifier.fillMaxSize(),
+                                    contentScale = ContentScale.Crop
+                                )
+                            } else {
+                                // Placeholder gradient
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxSize()
+                                        .background(
+                                            brush = androidx.compose.ui.graphics.Brush.linearGradient(
+                                                colors = listOf(
+                                                    MaterialTheme.colorScheme.primaryContainer,
+                                                    MaterialTheme.colorScheme.secondaryContainer
+                                                )
+                                            )
+                                        ),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Text(
+                                        text = news.sourceName.take(2).uppercase(),
+                                        style = MaterialTheme.typography.displayLarge,
+                                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.5f)
+                                    )
+                                }
+                            }
                         }
                         
                         Column(modifier = Modifier.padding(16.dp)) {

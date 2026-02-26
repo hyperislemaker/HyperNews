@@ -42,7 +42,7 @@ class NewsFeedViewModel @Inject constructor(
     
     private fun observeNews() {
         viewModelScope.launch {
-            newsItemDao.getAllNews().collect { entities ->
+            newsItemDao.getNewsFromActiveFeeds().collect { entities ->
                 _uiState.update { state ->
                     state.copy(
                         news = entities.map { it.toModel() }.sortedByDescending { it.publishedDate },

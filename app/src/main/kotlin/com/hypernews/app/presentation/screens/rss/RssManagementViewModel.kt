@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hypernews.app.data.mapper.toDomain
 import com.hypernews.app.data.mapper.toEntity
+import com.hypernews.app.data.local.dao.NewsItemDao
 import com.hypernews.app.data.local.dao.RssFeedDao
 import com.hypernews.app.data.remote.rss.RssFeedManager
 import com.hypernews.app.domain.common.Result
@@ -22,7 +23,8 @@ data class RssManagementUiState(
 @HiltViewModel
 class RssManagementViewModel @Inject constructor(
     private val rssFeedDao: RssFeedDao,
-    private val rssFeedManager: RssFeedManager
+    private val rssFeedManager: RssFeedManager,
+    private val newsItemDao: NewsItemDao
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(RssManagementUiState())
@@ -70,6 +72,8 @@ class RssManagementViewModel @Inject constructor(
     fun deleteFeed(feed: RssFeed) {
         viewModelScope.launch {
             rssFeedDao.delete(feed.toEntity())
+            // Silinen kaynağa ait haberleri de temizle
+            newsItemDao.deleteNewsFromInactiveFeeds()
         }
     }
 

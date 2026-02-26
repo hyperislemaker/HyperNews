@@ -77,12 +77,43 @@ class RssParser @Inject constructor() {
     }
     
     private fun extractImageUrl(entry: com.rometools.rome.feed.synd.SyndEntry): String? {
+        // 1. Enclosure'dan görsel al
         entry.enclosures.firstOrNull { it.type?.startsWith("image") == true }?.let { return it.url }
-        entry.foreignMarkup.find { it.name == "thumbnail" || it.name == "image" }?.let { 
-            return it.getAttributeValue("url") ?: it.text 
+        
+        // 2. Media namespace'den al (media:content, media:thumbnail)
+        entry.foreignMarkup.forEach { element ->
+            when (element.name) {
+                "thumbnail", "content" -> {
+                    element.getAttributeValue("url")?.let { return it }
+                }
+                "group" -> {
+                    element.children.forEach { child ->
+                        if (child.name == "content" || child.name == "thumbnail") {
+                            (child as? org.jdom2.Element)?.getAttributeValue("url")?.let { return it }
+                        }
+                    }
+                }
+            }
         }
-        val imgRegex = Regex("<img[^>]+src=[\"']([^\"']+)[\"']")
-        entry.description?.value?.let { imgRegex.find(it)?.groupValues?.get(1)?.let { return it } }
+        
+        // 3. Description içindeki img tag'inden al
+        val imgRegex = Regex("<img[^>]+src=[\"']([^\"']+)[\"']", RegexOption.IGNORE_CASE)
+        entry.description?.value?.let { desc ->
+            imgRegex.find(desc)?.groupValues?.get(1)?.let { url ->
+                if (url.startsWith("http")) return url
+            }
+        }
+        
+        // 4. Content içindeki img tag'inden al
+        entry.contents.forEach { content ->
+            content.value?.let { value ->
+                imgRegex.find(value)?.groupValues?.get(1)?.let { url ->
+                    if (url.startsWith("http")) return url
+                }
+            }
+        }
+        
+        // 5. Link'ten Open Graph image çekmeye çalışma (opsiyonel, performans için kapalı)
         return null
     }
 }
