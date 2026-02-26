@@ -84,6 +84,23 @@ class RssManagementViewModel @Inject constructor(
         }
     }
 
+    fun toggleActive(feed: RssFeed) {
+        viewModelScope.launch {
+            val updated = feed.copy(isActive = !feed.isActive)
+            rssFeedDao.update(updated.toEntity())
+            // Pasif yapılan kaynağın haberlerini temizle
+            if (!updated.isActive) {
+                newsItemDao.deleteNewsFromInactiveFeeds()
+            }
+        }
+    }
+
+    fun addPresetFeed(name: String, url: String) {
+        viewModelScope.launch {
+            rssFeedManager.addFeed(name, url)
+        }
+    }
+
     fun clearError() {
         _uiState.update { it.copy(error = null) }
     }

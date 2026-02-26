@@ -31,9 +31,25 @@ class RssFeedManager @Inject constructor(
             return Result.Error(AppError.ValidationError("Bu RSS kaynağı zaten ekli"))
         }
         
+        // İsim boşsa URL'den çıkar
+        val feedName = if (name.isBlank()) {
+            try {
+                val host = java.net.URL(url).host
+                    .removePrefix("www.")
+                    .split(".")
+                    .first()
+                    .replaceFirstChar { it.uppercase() }
+                host
+            } catch (e: Exception) {
+                "RSS Kaynağı"
+            }
+        } else {
+            name
+        }
+        
         val feed = RssFeed(
             id = UUID.randomUUID().toString(),
-            name = name,
+            name = feedName,
             url = url,
             isActive = true,
             notificationsEnabled = true,

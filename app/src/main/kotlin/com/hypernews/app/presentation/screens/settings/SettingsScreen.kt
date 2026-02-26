@@ -221,7 +221,7 @@ fun SettingsScreen(
             title = { Text("Güncelleme Aralığı") },
             text = {
                 Column {
-                    listOf(15, 30, 60).forEach { minutes ->
+                    listOf(1, 5, 15, 30, 60).forEach { minutes ->
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -240,7 +240,7 @@ fun SettingsScreen(
                                 }
                             )
                             Spacer(modifier = Modifier.width(8.dp))
-                            Text("$minutes dakika")
+                            Text(if (minutes == 1) "1 dakika (test)" else "$minutes dakika")
                         }
                     }
                 }
