@@ -1,5 +1,7 @@
 package com.hypernews.app.presentation.screens.rss
 
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -22,33 +24,60 @@ data class PresetRssSource(
 )
 
 val presetSources = listOf(
-    // Genel Haberler
-    PresetRssSource("NTV", "https://www.ntv.com.tr/son-dakika.rss", "Genel"),
-    PresetRssSource("Hürriyet", "https://www.hurriyet.com.tr/rss/gundem", "Genel"),
-    PresetRssSource("Sözcü", "https://www.sozcu.com.tr/rss/gundem.xml", "Genel"),
-    PresetRssSource("Milliyet", "https://www.milliyet.com.tr/rss/rssNew/gundemRss.xml", "Genel"),
-    PresetRssSource("Sabah", "https://www.sabah.com.tr/rss/gundem.xml", "Genel"),
-    PresetRssSource("Habertürk", "https://www.haberturk.com/rss/gundem.xml", "Genel"),
-    PresetRssSource("CNN Türk", "https://www.cnnturk.com/feed/rss/turkiye/news", "Genel"),
-    PresetRssSource("TRT Haber", "https://www.trthaber.com/sondakika.rss", "Genel"),
+    // Türkiye - Genel
+    PresetRssSource("NTV", "https://www.ntv.com.tr/son-dakika.rss", "Türkiye"),
+    PresetRssSource("Hürriyet", "https://www.hurriyet.com.tr/rss/gundem", "Türkiye"),
+    PresetRssSource("Sözcü", "https://www.sozcu.com.tr/rss/gundem.xml", "Türkiye"),
+    PresetRssSource("Milliyet", "https://www.milliyet.com.tr/rss/rssNew/gundemRss.xml", "Türkiye"),
+    PresetRssSource("Sabah", "https://www.sabah.com.tr/rss/gundem.xml", "Türkiye"),
+    PresetRssSource("Habertürk", "https://www.haberturk.com/rss/gundem.xml", "Türkiye"),
+    PresetRssSource("CNN Türk", "https://www.cnnturk.com/feed/rss/turkiye/news", "Türkiye"),
+    PresetRssSource("TRT Haber", "https://www.trthaber.com/sondakika.rss", "Türkiye"),
+    PresetRssSource("BBC Türkçe", "https://feeds.bbci.co.uk/turkce/rss.xml", "Türkiye"),
+    PresetRssSource("DW Türkçe", "https://rss.dw.com/xml/rss-tur-all", "Türkiye"),
+    
+    // Dünya - İngilizce
+    PresetRssSource("BBC News", "https://feeds.bbci.co.uk/news/world/rss.xml", "Dünya"),
+    PresetRssSource("CNN", "http://rss.cnn.com/rss/edition_world.rss", "Dünya"),
+    PresetRssSource("Reuters", "https://www.reutersagency.com/feed/", "Dünya"),
+    PresetRssSource("The Guardian", "https://www.theguardian.com/world/rss", "Dünya"),
+    PresetRssSource("Al Jazeera", "https://www.aljazeera.com/xml/rss/all.xml", "Dünya"),
+    PresetRssSource("NPR News", "https://feeds.npr.org/1001/rss.xml", "Dünya"),
+    PresetRssSource("AP News", "https://rsshub.app/apnews/topics/world-news", "Dünya"),
+    PresetRssSource("France 24", "https://www.france24.com/en/rss", "Dünya"),
     
     // Ekonomi
     PresetRssSource("Bloomberg HT", "https://www.bloomberght.com/rss", "Ekonomi"),
     PresetRssSource("Dünya", "https://www.dunya.com/rss", "Ekonomi"),
+    PresetRssSource("CNBC", "https://www.cnbc.com/id/100003114/device/rss/rss.html", "Ekonomi"),
+    PresetRssSource("Financial Times", "https://www.ft.com/rss/home", "Ekonomi"),
+    PresetRssSource("Bloomberg", "https://feeds.bloomberg.com/markets/news.rss", "Ekonomi"),
+    PresetRssSource("Wall Street Journal", "https://feeds.a.dj.com/rss/RSSMarketsMain.xml", "Ekonomi"),
     
     // Spor
     PresetRssSource("NTV Spor", "https://www.ntvspor.net/son-dakika.rss", "Spor"),
     PresetRssSource("Fanatik", "https://www.fanatik.com.tr/rss/futbol", "Spor"),
+    PresetRssSource("ESPN", "https://www.espn.com/espn/rss/news", "Spor"),
+    PresetRssSource("Sky Sports", "https://www.skysports.com/rss/12040", "Spor"),
+    PresetRssSource("BBC Sport", "https://feeds.bbci.co.uk/sport/rss.xml", "Spor"),
     
     // Teknoloji
     PresetRssSource("Webtekno", "https://www.webtekno.com/rss.xml", "Teknoloji"),
     PresetRssSource("Shiftdelete", "https://shiftdelete.net/feed", "Teknoloji"),
     PresetRssSource("Technopat", "https://www.technopat.net/feed/", "Teknoloji"),
     PresetRssSource("Donanım Haber", "https://www.donanimhaber.com/rss/tum/", "Teknoloji"),
+    PresetRssSource("TechCrunch", "https://techcrunch.com/feed/", "Teknoloji"),
+    PresetRssSource("The Verge", "https://www.theverge.com/rss/index.xml", "Teknoloji"),
+    PresetRssSource("Ars Technica", "https://feeds.arstechnica.com/arstechnica/index", "Teknoloji"),
+    PresetRssSource("Wired", "https://www.wired.com/feed/rss", "Teknoloji"),
+    PresetRssSource("Engadget", "https://www.engadget.com/rss.xml", "Teknoloji"),
     
-    // Dünya
-    PresetRssSource("BBC Türkçe", "https://feeds.bbci.co.uk/turkce/rss.xml", "Dünya"),
-    PresetRssSource("DW Türkçe", "https://rss.dw.com/xml/rss-tur-all", "Dünya")
+    // Bilim
+    PresetRssSource("Nature", "https://www.nature.com/nature.rss", "Bilim"),
+    PresetRssSource("Science Daily", "https://www.sciencedaily.com/rss/all.xml", "Bilim"),
+    PresetRssSource("New Scientist", "https://www.newscientist.com/feed/home/", "Bilim"),
+    PresetRssSource("NASA", "https://www.nasa.gov/rss/dyn/breaking_news.rss", "Bilim"),
+    PresetRssSource("Space.com", "https://www.space.com/feeds/all", "Bilim")
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -254,19 +283,20 @@ private fun PresetSourcesDialog(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .horizontalScroll(rememberScrollState())
                         .padding(bottom = 8.dp),
                     horizontalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
                     FilterChip(
                         selected = selectedCategory == null,
                         onClick = { selectedCategory = null },
-                        label = { Text("Tümü") }
+                        label = { Text("Tümü", style = MaterialTheme.typography.labelSmall) }
                     )
-                    categories.take(3).forEach { category ->
+                    categories.forEach { category ->
                         FilterChip(
                             selected = selectedCategory == category,
                             onClick = { selectedCategory = category },
-                            label = { Text(category) }
+                            label = { Text(category, style = MaterialTheme.typography.labelSmall) }
                         )
                     }
                 }
