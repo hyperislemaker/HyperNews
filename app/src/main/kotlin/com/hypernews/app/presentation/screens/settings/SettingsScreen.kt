@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.hypernews.app.domain.model.NotificationSourcePreference
 import com.hypernews.app.domain.model.ThemePreference
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -27,6 +28,7 @@ fun SettingsScreen(
     var showThemeDialog by remember { mutableStateOf(false) }
     var showIntervalDialog by remember { mutableStateOf(false) }
     var showClearCacheDialog by remember { mutableStateOf(false) }
+    var showNotificationSourceDialog by remember { mutableStateOf(false) }
 
     Scaffold(
         topBar = {
@@ -86,6 +88,18 @@ fun SettingsScreen(
             // Bildirim Ayarları
             item {
                 SettingsSectionHeader(title = "Bildirimler")
+            }
+            item {
+                SettingsItem(
+                    icon = Icons.Default.Source,
+                    title = "Bildirim Kaynağı",
+                    subtitle = when (uiState.notificationSourcePreference) {
+                        NotificationSourcePreference.WHATSAPP_ONLY -> "Sadece WhatsApp Kanalları"
+                        NotificationSourcePreference.RSS_ONLY -> "Sadece Haber Kaynakları"
+                        NotificationSourcePreference.BOTH -> "WhatsApp + Haber Kaynakları"
+                    },
+                    onClick = { showNotificationSourceDialog = true }
+                )
             }
             item {
                 SettingsSwitchItem(
@@ -270,6 +284,63 @@ fun SettingsScreen(
                     Text("İptal")
                 }
             }
+        )
+    }
+
+    // Bildirim Kaynağı Dialog
+    if (showNotificationSourceDialog) {
+        AlertDialog(
+            onDismissRequest = { showNotificationSourceDialog = false },
+            title = { Text("Bildirim Kaynağı Seçin") },
+            text = {
+                Column {
+                    Text(
+                        text = "Hangi kaynaklardan bildirim almak istiyorsunuz?",
+                        style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.padding(bottom = 16.dp)
+                    )
+                    NotificationSourcePreference.entries.forEach { preference ->
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable {
+                                    viewModel.setNotificationSourcePreference(preference)
+                                    showNotificationSourceDialog = false
+                                }
+                                .padding(vertical = 12.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            RadioButton(
+                                selected = uiState.notificationSourcePreference == preference,
+                                onClick = {
+                                    viewModel.setNotificationSourcePreference(preference)
+                                    showNotificationSourceDialog = false
+                                }
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Column {
+                                Text(
+                                    text = when (preference) {
+                                        NotificationSourcePreference.WHATSAPP_ONLY -> "Sadece WhatsApp Kanalları"
+                                        NotificationSourcePreference.RSS_ONLY -> "Sadece Haber Kaynakları"
+                                        NotificationSourcePreference.BOTH -> "Her İkisi"
+                                    }
+                                )
+                                Text(
+                                    text = when (preference) {
+                                        NotificationSourcePreference.WHATSAPP_ONLY -> "WhatsApp kanal bildirimlerini yakala"
+                                        NotificationSourcePreference.RSS_ONLY -> "RSS kaynaklarından bildirim al"
+                                        NotificationSourcePreference.BOTH -> "Tüm kaynaklardan bildirim al"
+                                    },
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                        }
+                    }
+                }
+            },
+            confirmButton = {}
         )
     }
 }

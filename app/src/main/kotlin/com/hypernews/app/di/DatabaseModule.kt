@@ -6,6 +6,7 @@ import com.hypernews.app.data.local.dao.AppSettingsDao
 import com.hypernews.app.data.local.dao.NewsItemDao
 import com.hypernews.app.data.local.dao.RssFeedDao
 import com.hypernews.app.data.local.dao.SearchHistoryDao
+import com.hypernews.app.data.local.dao.WhatsAppChannelDao
 import com.hypernews.app.data.local.database.AppDatabase
 import dagger.Module
 import dagger.Provides
@@ -98,5 +99,17 @@ object DatabaseModule {
     @Singleton
     fun provideAppSettingsDao(database: AppDatabase): AppSettingsDao {
         return database.appSettingsDao()
+    }
+
+    /**
+     * Provides WhatsAppChannelDao for WhatsApp channel database operations.
+     * 
+     * @param database The AppDatabase instance
+     * @return WhatsAppChannelDao for CRUD operations on WhatsApp channels and messages
+     */
+    @Provides
+    @Singleton
+    fun provideWhatsAppChannelDao(database: AppDatabase): WhatsAppChannelDao {
+        return database.whatsAppChannelDao()
     }
 }

@@ -72,6 +72,19 @@
     <!-- Notifications -->
     <string name="notification_channel_general">Genel Haberler</string>
     <string name="notification_channel_breaking">Son Dakika</string>
+    <string name="notification_channel_whatsapp">WhatsApp Kanalları</string>
+    
+    <!-- WhatsApp Channels -->
+    <string name="whatsapp_channels">WhatsApp Kanalları</string>
+    <string name="notification_access_required">Bildirim Erişimi Gerekli</string>
+    <string name="notification_access_description">WhatsApp kanal bildirimlerini yakalamak için bildirim erişimi izni vermeniz gerekiyor.</string>
+    <string name="grant_permission">İzin Ver</string>
+    <string name="notification_source">Bildirim Kaynağı</string>
+    <string name="notification_source_whatsapp">Sadece WhatsApp Kanalları</string>
+    <string name="notification_source_rss">Sadece Haber Kaynakları</string>
+    <string name="notification_source_both">WhatsApp + Haber Kaynakları</string>
+    <string name="no_channels_yet">Henüz kanal yok</string>
+    <string name="channels_will_appear_here">WhatsApp kanallarından bildirim geldiğinde burada görünecek</string>
     
     <!-- Premium -->
     <string name="premium">Premium</string>

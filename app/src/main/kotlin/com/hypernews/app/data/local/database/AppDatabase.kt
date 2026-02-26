@@ -6,10 +6,13 @@ import com.hypernews.app.data.local.dao.AppSettingsDao
 import com.hypernews.app.data.local.dao.NewsItemDao
 import com.hypernews.app.data.local.dao.RssFeedDao
 import com.hypernews.app.data.local.dao.SearchHistoryDao
+import com.hypernews.app.data.local.dao.WhatsAppChannelDao
 import com.hypernews.app.data.local.entity.AppSettingsEntity
 import com.hypernews.app.data.local.entity.NewsItemEntity
 import com.hypernews.app.data.local.entity.RssFeedEntity
 import com.hypernews.app.data.local.entity.SearchHistoryEntity
+import com.hypernews.app.data.local.entity.WhatsAppChannelEntity
+import com.hypernews.app.data.local.entity.WhatsAppMessageEntity
 
 /**
  * Room database for the Telegram-Style News App.
@@ -19,9 +22,11 @@ import com.hypernews.app.data.local.entity.SearchHistoryEntity
  * - RSS feed sources configured by the user
  * - Search history for quick access to previous searches
  * - Application settings (theme, sync interval, etc.)
+ * - WhatsApp channel messages
  *
  * Migration Strategy:
  * - Version 1: Initial schema with all 4 entities
+ * - Version 2: Added WhatsApp channel entities
  * - Uses fallbackToDestructiveMigration() during development phase
  * - For production releases, proper migration scripts should be implemented
  *   to preserve user data (favorites, settings, etc.)
@@ -30,15 +35,19 @@ import com.hypernews.app.data.local.entity.SearchHistoryEntity
  * @see RssFeedEntity for RSS feed source storage
  * @see SearchHistoryEntity for search history storage
  * @see AppSettingsEntity for application settings storage
+ * @see WhatsAppChannelEntity for WhatsApp channel storage
+ * @see WhatsAppMessageEntity for WhatsApp message storage
  */
 @Database(
     entities = [
         NewsItemEntity::class,
         RssFeedEntity::class,
         SearchHistoryEntity::class,
-        AppSettingsEntity::class
+        AppSettingsEntity::class,
+        WhatsAppChannelEntity::class,
+        WhatsAppMessageEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = true
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -70,6 +79,13 @@ abstract class AppDatabase : RoomDatabase() {
      * @return AppSettingsDao for CRUD operations on app settings
      */
     abstract fun appSettingsDao(): AppSettingsDao
+
+    /**
+     * Provides access to WhatsApp channel database operations.
+     *
+     * @return WhatsAppChannelDao for CRUD operations on WhatsApp channels and messages
+     */
+    abstract fun whatsAppChannelDao(): WhatsAppChannelDao
 
     companion object {
         /**

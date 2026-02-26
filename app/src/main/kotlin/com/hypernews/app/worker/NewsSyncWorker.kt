@@ -10,11 +10,13 @@ import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
+import com.hypernews.app.data.local.dao.AppSettingsDao
 import com.hypernews.app.data.local.dao.NewsItemDao
 import com.hypernews.app.data.mapper.toEntity
 import com.hypernews.app.data.remote.firebase.BreakingNewsDetector
 import com.hypernews.app.data.remote.rss.RssFeedManager
 import com.hypernews.app.domain.common.Result
+import com.hypernews.app.domain.model.NotificationSourcePreference
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import java.util.concurrent.TimeUnit
@@ -26,12 +28,14 @@ class NewsSyncWorker @AssistedInject constructor(
     private val rssFeedManager: RssFeedManager,
     private val newsItemDao: NewsItemDao,
     private val breakingNewsDetector: BreakingNewsDetector,
-    private val notificationHelper: NotificationHelper
+    private val notificationHelper: NotificationHelper,
+    private val appSettingsDao: AppSettingsDao
 ) : CoroutineWorker(context, params) {
     
     companion object {
         const val WORK_NAME = "news_sync_worker"
         private const val DEFAULT_INTERVAL_MINUTES = 1L // Debug için 1 dakika
+        private const val KEY_NOTIFICATION_SOURCE = "notification_source_preference"
         
         fun schedule(context: Context, intervalMinutes: Long = DEFAULT_INTERVAL_MINUTES) {
             val constraints = Constraints.Builder()
@@ -57,6 +61,10 @@ class NewsSyncWorker @AssistedInject constructor(
     
     override suspend fun doWork(): Result {
         return try {
+            // Check notification preference
+            val preference = getNotificationPreference()
+            val shouldShowRssNotifications = preference != NotificationSourcePreference.WHATSAPP_ONLY
+            
             when (val result = rssFeedManager.fetchAllFeeds()) {
                 is com.hypernews.app.domain.common.Result.Success -> {
                     val newsItems = result.data.map { item ->
@@ -67,8 +75,11 @@ class NewsSyncWorker @AssistedInject constructor(
                     
                     newsItemDao.insertAll(newsItems.map { it.toEntity() })
                     
-                    newsItems.filter { it.isBreakingNews }.forEach { news ->
-                        notificationHelper.showBreakingNewsNotification(news)
+                    // Only show notifications if RSS notifications are enabled
+                    if (shouldShowRssNotifications) {
+                        newsItems.filter { it.isBreakingNews }.forEach { news ->
+                            notificationHelper.showBreakingNewsNotification(news)
+                        }
                     }
                     
                     Result.success()
@@ -78,6 +89,15 @@ class NewsSyncWorker @AssistedInject constructor(
             }
         } catch (e: Exception) {
             Result.retry()
+        }
+    }
+    
+    private suspend fun getNotificationPreference(): NotificationSourcePreference {
+        val value = appSettingsDao.getValue(KEY_NOTIFICATION_SOURCE)
+        return try {
+            value?.let { NotificationSourcePreference.valueOf(it) } ?: NotificationSourcePreference.BOTH
+        } catch (e: Exception) {
+            NotificationSourcePreference.BOTH
         }
     }
 }

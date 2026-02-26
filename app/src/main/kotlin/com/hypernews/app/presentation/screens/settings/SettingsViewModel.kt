@@ -7,6 +7,7 @@ import com.hypernews.app.data.local.dao.AppSettingsDao
 import com.hypernews.app.data.local.dao.RssFeedDao
 import com.hypernews.app.data.local.entity.AppSettingsEntity
 import com.hypernews.app.data.remote.firebase.AuthManager
+import com.hypernews.app.domain.model.NotificationSourcePreference
 import com.hypernews.app.domain.model.ThemePreference
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
@@ -24,7 +25,8 @@ data class SettingsUiState(
     val hyperIsleEnabled: Boolean = true,
     val updateIntervalMinutes: Int = 15,
     val cacheSize: String = "0 MB",
-    val appVersion: String = "1.0.0"
+    val appVersion: String = "1.0.0",
+    val notificationSourcePreference: NotificationSourcePreference = NotificationSourcePreference.BOTH
 )
 
 @HiltViewModel
@@ -44,6 +46,7 @@ class SettingsViewModel @Inject constructor(
         private const val KEY_THEME = "theme"
         private const val KEY_HYPERISLE = "hyperisle_enabled"
         private const val KEY_UPDATE_INTERVAL = "update_interval"
+        private const val KEY_NOTIFICATION_SOURCE = "notification_source_preference"
     }
 
     init {
@@ -74,6 +77,9 @@ class SettingsViewModel @Inject constructor(
             } ?: ThemePreference.SYSTEM
             val hyperIsle = appSettingsDao.getValue(KEY_HYPERISLE)?.toBoolean() ?: true
             val interval = appSettingsDao.getValue(KEY_UPDATE_INTERVAL)?.toIntOrNull() ?: 15
+            val notificationSource = appSettingsDao.getValue(KEY_NOTIFICATION_SOURCE)?.let {
+                runCatching { NotificationSourcePreference.valueOf(it) }.getOrNull()
+            } ?: NotificationSourcePreference.BOTH
 
             _uiState.update { state ->
                 state.copy(
@@ -81,7 +87,8 @@ class SettingsViewModel @Inject constructor(
                     breakingNewsNotificationsEnabled = breakingNews,
                     themePreference = theme,
                     hyperIsleEnabled = hyperIsle,
-                    updateIntervalMinutes = interval
+                    updateIntervalMinutes = interval,
+                    notificationSourcePreference = notificationSource
                 )
             }
         }
@@ -124,6 +131,13 @@ class SettingsViewModel @Inject constructor(
         viewModelScope.launch {
             appSettingsDao.setValue(AppSettingsEntity(KEY_UPDATE_INTERVAL, minutes.toString()))
             _uiState.update { it.copy(updateIntervalMinutes = minutes) }
+        }
+    }
+
+    fun setNotificationSourcePreference(preference: NotificationSourcePreference) {
+        viewModelScope.launch {
+            appSettingsDao.setValue(AppSettingsEntity(KEY_NOTIFICATION_SOURCE, preference.name))
+            _uiState.update { it.copy(notificationSourcePreference = preference) }
         }
     }
 

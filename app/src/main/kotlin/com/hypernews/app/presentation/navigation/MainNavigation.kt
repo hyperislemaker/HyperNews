@@ -30,6 +30,8 @@ import com.hypernews.app.presentation.screens.rss.RssManagementScreen
 import com.hypernews.app.presentation.screens.search.SearchScreen
 import com.hypernews.app.presentation.screens.settings.SettingsScreen
 import com.hypernews.app.presentation.screens.webview.ArticleWebViewScreen
+import com.hypernews.app.presentation.screens.whatsapp.WhatsAppChannelDetailScreen
+import com.hypernews.app.presentation.screens.whatsapp.WhatsAppChannelsScreen
 import java.net.URLDecoder
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
@@ -56,6 +58,10 @@ sealed class Screen(val route: String) {
             return "article_webview/$encodedUrl/$encodedTitle"
         }
     }
+    data object WhatsAppChannels : Screen("whatsapp_channels")
+    data object WhatsAppChannelDetail : Screen("whatsapp_channel_detail/{channelId}") {
+        fun createRoute(channelId: String) = "whatsapp_channel_detail/$channelId"
+    }
 }
 
 sealed class BottomNavItem(
@@ -69,6 +75,12 @@ sealed class BottomNavItem(
         title = "Haberler",
         selectedIcon = Icons.Filled.Newspaper,
         unselectedIcon = Icons.Outlined.Newspaper
+    )
+    data object WhatsApp : BottomNavItem(
+        route = Screen.WhatsAppChannels.route,
+        title = "Kanallar",
+        selectedIcon = Icons.Filled.Forum,
+        unselectedIcon = Icons.Outlined.Forum
     )
     data object Favorites : BottomNavItem(
         route = Screen.Favorites.route,
@@ -97,6 +109,7 @@ fun MainNavigation(
     val navController = rememberNavController()
     val bottomNavItems = listOf(
         BottomNavItem.Feed,
+        BottomNavItem.WhatsApp,
         BottomNavItem.Favorites,
         BottomNavItem.Search,
         BottomNavItem.Settings
@@ -201,6 +214,26 @@ fun MainNavigation(
                     onNewsClick = { newsId ->
                         navController.navigate(Screen.NewsDetail.createRoute(newsId))
                     }
+                )
+            }
+
+            composable(Screen.WhatsAppChannels.route) {
+                WhatsAppChannelsScreen(
+                    onNavigateBack = { navController.popBackStack() },
+                    onChannelClick = { channelId ->
+                        navController.navigate(Screen.WhatsAppChannelDetail.createRoute(channelId))
+                    }
+                )
+            }
+
+            composable(
+                route = Screen.WhatsAppChannelDetail.route,
+                arguments = listOf(navArgument("channelId") { type = NavType.StringType })
+            ) { backStackEntry ->
+                val channelId = backStackEntry.arguments?.getString("channelId") ?: return@composable
+                WhatsAppChannelDetailScreen(
+                    channelId = channelId,
+                    onNavigateBack = { navController.popBackStack() }
                 )
             }
 
