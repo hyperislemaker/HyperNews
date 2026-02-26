@@ -82,7 +82,7 @@ interface NewsItemDao {
     fun getAllNews(): Flow<List<NewsItemEntity>>
 
     @Query("""
-        SELECT n.* FROM news_items n
+        SELECT DISTINCT n.* FROM news_items n
         INNER JOIN rss_feeds f ON n.source_name = f.name
         WHERE f.is_active = 1
         ORDER BY n.published_date DESC

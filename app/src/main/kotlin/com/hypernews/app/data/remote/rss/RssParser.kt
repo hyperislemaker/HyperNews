@@ -84,12 +84,16 @@ class RssParser @Inject constructor() {
         entry.foreignMarkup.forEach { element ->
             when (element.name) {
                 "thumbnail", "content" -> {
-                    element.getAttributeValue("url")?.let { return it }
+                    element.getAttributeValue("url")?.let { url ->
+                        if (url.isNotBlank() && url.startsWith("http")) return url
+                    }
                 }
                 "group" -> {
                     element.children.forEach { child ->
                         if (child.name == "content" || child.name == "thumbnail") {
-                            (child as? org.jdom2.Element)?.getAttributeValue("url")?.let { return it }
+                            (child as? org.jdom2.Element)?.getAttributeValue("url")?.let { url ->
+                                if (url.isNotBlank() && url.startsWith("http")) return url
+                            }
                         }
                     }
                 }
@@ -100,7 +104,7 @@ class RssParser @Inject constructor() {
         val imgRegex = Regex("<img[^>]+src=[\"']([^\"']+)[\"']", RegexOption.IGNORE_CASE)
         entry.description?.value?.let { desc ->
             imgRegex.find(desc)?.groupValues?.get(1)?.let { url ->
-                if (url.startsWith("http")) return url
+                if (url.isNotBlank() && url.startsWith("http")) return url
             }
         }
         
@@ -108,12 +112,19 @@ class RssParser @Inject constructor() {
         entry.contents.forEach { content ->
             content.value?.let { value ->
                 imgRegex.find(value)?.groupValues?.get(1)?.let { url ->
-                    if (url.startsWith("http")) return url
+                    if (url.isNotBlank() && url.startsWith("http")) return url
                 }
             }
         }
         
-        // 5. Link'ten Open Graph image çekmeye çalışma (opsiyonel, performans için kapalı)
+        // 5. Enclosure'dan herhangi bir URL al (bazı RSS'ler type belirtmiyor)
+        entry.enclosures.firstOrNull()?.url?.let { url ->
+            if (url.isNotBlank() && (url.contains(".jpg") || url.contains(".jpeg") || 
+                url.contains(".png") || url.contains(".webp") || url.contains(".gif"))) {
+                return url
+            }
+        }
+        
         return null
     }
 }

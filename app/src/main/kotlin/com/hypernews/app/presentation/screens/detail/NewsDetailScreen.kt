@@ -162,15 +162,39 @@ fun NewsDetailScreen(
                             
                             Spacer(Modifier.height(16.dp))
                             
-                            OutlinedButton(
-                                onClick = {
-                                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(news.sourceUrl)))
-                                },
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Icon(Icons.Default.OpenInBrowser, null)
-                                Spacer(Modifier.width(8.dp))
-                                Text("Kaynağa Git")
+                            // Haberin Tamamını Oku butonu
+                            var showFullContent by remember { mutableStateOf(false) }
+                            
+                            if (!showFullContent) {
+                                FilledTonalButton(
+                                    onClick = { showFullContent = true },
+                                    modifier = Modifier.fillMaxWidth()
+                                ) {
+                                    Icon(Icons.Default.Article, null)
+                                    Spacer(Modifier.width(8.dp))
+                                    Text("Haberin Tamamını Oku")
+                                }
+                            } else {
+                                // Tam içerik göster (özet zaten gösterildi, burada kaynak linki vurgula)
+                                Card(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    colors = CardDefaults.cardColors(
+                                        containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
+                                    )
+                                ) {
+                                    Column(modifier = Modifier.padding(16.dp)) {
+                                        Text(
+                                            "📰 Haberin tam içeriği için kaynağa gidin",
+                                            style = MaterialTheme.typography.bodyMedium
+                                        )
+                                        Spacer(Modifier.height(8.dp))
+                                        Text(
+                                            news.sourceUrl,
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = MaterialTheme.colorScheme.primary
+                                        )
+                                    }
+                                }
                             }
                             
                             Spacer(Modifier.height(16.dp))
@@ -211,6 +235,22 @@ fun NewsDetailScreen(
                                 onDeleteComment = { viewModel.deleteComment(it) },
                                 onReportComment = { viewModel.reportComment(it) }
                             )
+                            
+                            Spacer(Modifier.height(24.dp))
+                            
+                            // Kaynağa Git butonu - en altta
+                            OutlinedButton(
+                                onClick = {
+                                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(news.sourceUrl)))
+                                },
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Icon(Icons.Default.OpenInBrowser, null)
+                                Spacer(Modifier.width(8.dp))
+                                Text("Kaynağa Git")
+                            }
+                            
+                            Spacer(Modifier.height(16.dp))
                         }
                     }
                 }

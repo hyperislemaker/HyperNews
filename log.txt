@@ -1,256 +1,191 @@
-2026-02-26 11:19:19.904 32012-32061 ProfileInstaller        com.hypernews.app.debug              D  Installing profile for com.hypernews.app.debug
-2026-02-26 11:21:49.113 32012-32123 System.err              com.hypernews.app.debug              W  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-2026-02-26 11:21:49.114 32012-32123 System.err              com.hypernews.app.debug              W  SLF4J: Defaulting to no-operation (NOP) logger implementation
-2026-02-26 11:21:49.114 32012-32123 System.err              com.hypernews.app.debug              W  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-2026-02-26 11:21:49.429 32012-32123 CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 247079863; UID 10218; state: ENABLED
-2026-02-26 11:21:51.165 32012-32018 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 9211KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 8008KB/15MB, paused 1.188ms,14.226ms total 63.540ms
-2026-02-26 11:21:52.511 32012-32018 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 9201KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 8556KB/16MB, paused 2.602ms,7.330ms total 50.785ms
-2026-02-26 11:21:53.663 32012-32018 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 9328KB AllocSpace bytes, 1(20KB) LOS objects, 49% free, 8915KB/17MB, paused 5.942ms,3.326ms total 47.108ms
-2026-02-26 11:21:54.813 32012-32012 WM-WorkSpec             com.hypernews.app.debug              W  Interval duration lesser than minimum allowed value; Changed to 900000
-2026-02-26 11:21:54.848 32012-32012 WM-PackageManagerHelper com.hypernews.app.debug              D  Skipping component enablement for androidx.work.impl.background.systemjob.SystemJobService
-2026-02-26 11:21:54.848 32012-32012 WM-Schedulers           com.hypernews.app.debug              D  Created SystemJobScheduler and enabled SystemJobService
-2026-02-26 11:21:56.834 32012-32018 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 15MB AllocSpace bytes, 6(116KB) LOS objects, 49% free, 10MB/21MB, paused 804us,7.068ms total 52.494ms
-2026-02-26 11:21:56.911 32012-32012 NavController           com.hypernews.app.debug              I  Ignoring popBackStack to destination -1457927832 as it was not found on the current back stack
-2026-02-26 11:21:57.034 32012-32012 WindowOnBackDispatcher  com.hypernews.app.debug              W  OnBackInvokedCallback is not enabled for the application.
-                                                                                                    Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
-2026-02-26 11:21:57.096 32012-32018 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 14MB AllocSpace bytes, 2(40KB) LOS objects, 49% free, 12MB/25MB, paused 5.733ms,2.057ms total 105.531ms
-2026-02-26 11:21:59.631 32012-32012 AndroidRuntime          com.hypernews.app.debug              D  Shutting down VM
-2026-02-26 11:21:59.632 32012-32012 AndroidRuntime          com.hypernews.app.debug              E  FATAL EXCEPTION: main (Fix with AI)
-                                                                                                    Process: com.hypernews.app.debug, PID: 32012
-                                                                                                    java.lang.IllegalArgumentException: Key "https://www.ntv.com.tr/son-dakika.rss" was already used. If you are using LazyColumn/Row please make sure you provide a unique key for each item.
-                                                                                                    	at androidx.compose.ui.layout.LayoutNodeSubcompositionsState.subcompose(SubcomposeLayout.kt:437)
-                                                                                                    	at androidx.compose.ui.layout.LayoutNodeSubcompositionsState$Scope.subcompose(SubcomposeLayout.kt:872)
-                                                                                                    	at androidx.compose.foundation.lazy.layout.LazyLayoutMeasureScopeImpl.measure-0kLqBqw(LazyLayoutMeasureScope.kt:125)
-                                                                                                    	at androidx.compose.foundation.lazy.LazyListMeasuredItemProvider.getAndMeasure(LazyListMeasuredItemProvider.kt:48)
-                                                                                                    	at androidx.compose.foundation.lazy.LazyListMeasureKt.measureLazyList-5IMabDg(LazyListMeasure.kt:195)
-                                                                                                    	at androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1.invoke-0kLqBqw(LazyList.kt:313)
-                                                                                                    	at androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1.invoke(LazyList.kt:178)
-                                                                                                    	at androidx.compose.foundation.lazy.layout.LazyLayoutKt$LazyLayout$3$2$1.invoke-0kLqBqw(LazyLayout.kt:107)
-                                                                                                    	at androidx.compose.foundation.lazy.layout.LazyLayoutKt$LazyLayout$3$2$1.invoke(LazyLayout.kt:100)
-                                                                                                    	at androidx.compose.ui.layout.LayoutNodeSubcompositionsState$createMeasurePolicy$1.measure-3p2s80s(SubcomposeLayout.kt:709)
-                                                                                                    	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:126)
-                                                                                                    	at androidx.compose.foundation.AndroidOverscroll_androidKt$StretchOverscrollNonClippingLayer$2.invoke-3p2s80s(AndroidOverscroll.android.kt:584)
-                                                                                                    	at androidx.compose.foundation.AndroidOverscroll_androidKt$StretchOverscrollNonClippingLayer$2.invoke(AndroidOverscroll.android.kt:583)
-                                                                                                    	at androidx.compose.ui.layout.LayoutModifierImpl.measure-3p2s80s(LayoutModifier.kt:294)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.foundation.AndroidOverscroll_androidKt$StretchOverscrollNonClippingLayer$1.invoke-3p2s80s(AndroidOverscroll.android.kt:568)
-                                                                                                    	at androidx.compose.foundation.AndroidOverscroll_androidKt$StretchOverscrollNonClippingLayer$1.invoke(AndroidOverscroll.android.kt:567)
-                                                                                                    	at androidx.compose.ui.layout.LayoutModifierImpl.measure-3p2s80s(LayoutModifier.kt:294)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.ui.graphics.SimpleGraphicsLayerModifier.measure-3p2s80s(GraphicsLayerModifier.kt:646)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.foundation.layout.PaddingValuesModifier.measure-3p2s80s(Padding.kt:455)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.foundation.layout.FillNode.measure-3p2s80s(Size.kt:699)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:252)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:251)
-                                                                                                    	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2303)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:500)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:256)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeReads$ui_release(OwnerSnapshotObserver.kt:133)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeMeasureSnapshotReads$ui_release(OwnerSnapshotObserver.kt:113)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:1617)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.access$performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:36)
-2026-02-26 11:21:59.632 32012-32012 AndroidRuntime          com.hypernews.app.debug              E  	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$MeasurePassDelegate.remeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:620) (Fix with AI)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$MeasurePassDelegate.measure-BRTryo0(LayoutNodeLayoutDelegate.kt:596)
-                                                                                                    	at androidx.compose.material3.ScaffoldKt$ScaffoldLayoutWithMeasureFix$1$1.invoke-0kLqBqw(Scaffold.kt:304)
-                                                                                                    	at androidx.compose.material3.ScaffoldKt$ScaffoldLayoutWithMeasureFix$1$1.invoke(Scaffold.kt:179)
-                                                                                                    	at androidx.compose.ui.layout.LayoutNodeSubcompositionsState$createMeasurePolicy$1.measure-3p2s80s(SubcomposeLayout.kt:709)
-                                                                                                    	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:126)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:252)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:251)
-                                                                                                    	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2303)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:500)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:256)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeReads$ui_release(OwnerSnapshotObserver.kt:133)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeMeasureSnapshotReads$ui_release(OwnerSnapshotObserver.kt:113)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:1617)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.access$performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:36)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$MeasurePassDelegate.remeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:620)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$MeasurePassDelegate.measure-BRTryo0(LayoutNodeLayoutDelegate.kt:596)
-                                                                                                    	at androidx.compose.foundation.layout.BoxMeasurePolicy.measure-3p2s80s(Box.kt:122)
-                                                                                                    	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:126)
-                                                                                                    	at androidx.compose.ui.graphics.SimpleGraphicsLayerModifier.measure-3p2s80s(GraphicsLayerModifier.kt:646)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.ui.graphics.SimpleGraphicsLayerModifier.measure-3p2s80s(GraphicsLayerModifier.kt:646)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:252)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:251)
-                                                                                                    	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2303)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:500)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:256)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeReads$ui_release(OwnerSnapshotObserver.kt:133)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeMeasureSnapshotReads$ui_release(OwnerSnapshotObserver.kt:113)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:1617)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.access$performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:36)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$MeasurePassDelegate.remeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:620)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$MeasurePassDelegate.measure-BRTryo0(LayoutNodeLayoutDelegate.kt:596)
-                                                                                                    	at androidx.compose.animation.AnimatedEnterExitMeasurePolicy.measure-3p2s80s(AnimatedVisibility.kt:851)
-                                                                                                    	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:126)
-2026-02-26 11:21:59.632 32012-32012 AndroidRuntime          com.hypernews.app.debug              E  	at androidx.compose.animation.EnterExitTransitionModifierNode.measure-3p2s80s(EnterExitTransition.kt:1156) (Fix with AI)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.ui.graphics.SimpleGraphicsLayerModifier.measure-3p2s80s(GraphicsLayerModifier.kt:646)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$1.invoke-3p2s80s(AnimatedContent.kt:733)
-                                                                                                    	at androidx.compose.animation.AnimatedContentKt$AnimatedContent$6$1$1.invoke(AnimatedContent.kt:732)
-                                                                                                    	at androidx.compose.ui.layout.LayoutModifierImpl.measure-3p2s80s(LayoutModifier.kt:294)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:252)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:251)
-                                                                                                    	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2303)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:500)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:256)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeReads$ui_release(OwnerSnapshotObserver.kt:133)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeMeasureSnapshotReads$ui_release(OwnerSnapshotObserver.kt:113)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:1617)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.access$performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:36)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$MeasurePassDelegate.remeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:620)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$MeasurePassDelegate.measure-BRTryo0(LayoutNodeLayoutDelegate.kt:596)
-                                                                                                    	at androidx.compose.animation.AnimatedContentMeasurePolicy.measure-3p2s80s(AnimatedContent.kt:787)
-                                                                                                    	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:126)
-                                                                                                    	at androidx.compose.animation.AnimatedContentTransitionScopeImpl$SizeModifier.measure-3p2s80s(AnimatedContent.kt:576)
-                                                                                                    	at androidx.compose.ui.node.BackwardsCompatNode.measure-3p2s80s(BackwardsCompatNode.kt:311)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.ui.graphics.SimpleGraphicsLayerModifier.measure-3p2s80s(GraphicsLayerModifier.kt:646)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.foundation.layout.PaddingValuesModifier.measure-3p2s80s(Padding.kt:455)
-                                                                                                    	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:116)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:252)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:251)
-                                                                                                    	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2303)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:500)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:256)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeReads$ui_release(OwnerSnapshotObserver.kt:133)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeMeasureSnapshotReads$ui_release(OwnerSnapshotObserver.kt:113)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:1617)
-2026-02-26 11:21:59.634 32012-32012 AndroidRuntime          com.hypernews.app.debug              E  	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.access$performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:36) (Fix with AI)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$MeasurePassDelegate.remeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:620)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$MeasurePassDelegate.measure-BRTryo0(LayoutNodeLayoutDelegate.kt:596)
-                                                                                                    	at androidx.compose.material3.ScaffoldKt$ScaffoldLayoutWithMeasureFix$1$1.invoke-0kLqBqw(Scaffold.kt:304)
-                                                                                                    	at androidx.compose.material3.ScaffoldKt$ScaffoldLayoutWithMeasureFix$1$1.invoke(Scaffold.kt:179)
-                                                                                                    	at androidx.compose.ui.layout.LayoutNodeSubcompositionsState$createMeasurePolicy$1.measure-3p2s80s(SubcomposeLayout.kt:709)
-                                                                                                    	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:126)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:252)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$performMeasureBlock$1.invoke(LayoutNodeLayoutDelegate.kt:251)
-                                                                                                    	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2303)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:500)
-                                                                                                    	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:256)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeReads$ui_release(OwnerSnapshotObserver.kt:133)
-                                                                                                    	at androidx.compose.ui.node.OwnerSnapshotObserver.observeMeasureSnapshotReads$ui_release(OwnerSnapshotObserver.kt:113)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:1617)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate.access$performMeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:36)
-                                                                                                    	at androidx.compose.ui.node.LayoutNodeLayoutDelegate$MeasurePassDelegate.remeasure-BRTryo0(LayoutNodeLayoutDelegate.kt:620)
-                                                                                                    	at androidx.compose.ui.node.LayoutNode.remeasure-_Sx5XlM$ui_release(LayoutNode.kt:1145)
-                                                                                                    	at androidx.compose.ui.node.LayoutNode.remeasure-_Sx5XlM$ui_release$default(LayoutNode.kt:1136)
-                                                                                                    	at androidx.compose.ui.node.MeasureAndLayoutDelegate.doRemeasure-sdFAvZA(MeasureAndLayoutDelegate.kt:356)
-                                                                                                    	at androidx.compose.ui.node.MeasureAndLayoutDelegate.remeasureAndRelayoutIfNeeded(MeasureAndLayoutDelegate.kt:514)
-                                                                                                    	at androidx.compose.ui.node.MeasureAndLayoutDelegate.remeasureAndRelayoutIfNeeded$default(MeasureAndLayoutDelegate.kt:491)
-                                                                                                    	at androidx.compose.ui.node.MeasureAndLayoutDelegate.measureAndLayout(MeasureAndLayoutDelegate.kt:377)
-                                                                                                    	at androidx.compose.ui.platform.AndroidComposeView.measureAndLayout(AndroidComposeView.android.kt:971)
-                                                                                                    	at androidx.compose.ui.node.Owner.measureAndLayout$default(Owner.kt:228)
-                                                                                                    	at androidx.compose.ui.platform.AndroidComposeView.dispatchDraw(AndroidComposeView.android.kt:1224)
-                                                                                                    	at android.view.View.draw(View.java:25097)
-                                                                                                    	at android.view.View.updateDisplayListIfDirty(View.java:23937)
-                                                                                                    	at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:4554)
-                                                                                                    	at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:4527)
-                                                                                                    	at android.view.View.updateDisplayListIfDirty(View.java:23891)
-                                                                                                    	at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:4554)
-                                                                                                    	at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:4527)
-                                                                                                    	at android.view.View.updateDisplayListIfDirty(View.java:23891)
-                                                                                                    	at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:4554)
-                                                                                                    	at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:4527)
-                                                                                                    	at android.view.View.updateDisplayListIfDirty(View.java:23891)
-                                                                                                    	at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:4554)
-                                                                                                    	at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:4527)
-                                                                                                    	at android.view.View.updateDisplayListIfDirty(View.java:23891)
-                                                                                                    	at android.view.ThreadedRenderer.updateViewTreeDisplayList(ThreadedRenderer.java:694)
-                                                                                                    	at android.view.ThreadedRenderer.updateRootDisplayList(ThreadedRenderer.java:700)
-                                                                                                    	at android.view.ThreadedRenderer.draw(ThreadedRenderer.java:798)
-2026-02-26 11:21:59.634 32012-32012 AndroidRuntime          com.hypernews.app.debug              E  	at android.view.ViewRootImpl.draw(ViewRootImpl.java:5837) (Fix with AI)
-                                                                                                    	at android.view.ViewRootImpl.performDraw(ViewRootImpl.java:5488)
-                                                                                                    	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:4482)
-                                                                                                    	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:3076)
-                                                                                                    	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:10643)
-                                                                                                    	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1570)
-                                                                                                    	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1579)
-                                                                                                    	at android.view.Choreographer.doCallbacks(Choreographer.java:1179)
-                                                                                                    	at android.view.Choreographer.doFrame(Choreographer.java:1108)
-                                                                                                    	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:1553)
+2026-02-26 11:53:02.793  1531-1531  InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
+2026-02-26 11:53:02.794  1531-1531  ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:f50824fb: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2026-02-26 11:53:03.790  1531-1645  System.err              com.hypernews.app.debug              W  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2026-02-26 11:53:03.790  1531-1645  System.err              com.hypernews.app.debug              W  SLF4J: Defaulting to no-operation (NOP) logger implementation
+2026-02-26 11:53:03.791  1531-1645  System.err              com.hypernews.app.debug              W  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2026-02-26 11:53:03.969  1531-1645  CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 247079863; UID 10219; state: ENABLED
+2026-02-26 11:53:04.011  1531-1531  WM-WorkSpec             com.hypernews.app.debug              W  Interval duration lesser than minimum allowed value; Changed to 900000
+2026-02-26 11:53:04.039  1531-1531  WM-PackageManagerHelper com.hypernews.app.debug              D  androidx.work.impl.background.systemjob.SystemJobService enabled
+2026-02-26 11:53:04.039  1531-1531  WM-Schedulers           com.hypernews.app.debug              D  Created SystemJobScheduler and enabled SystemJobService
+2026-02-26 11:53:04.109  1531-1652  JobInfo                 com.hypernews.app.debug              W  Requested important-while-foreground flag for job0 is ignored and takes no effect
+2026-02-26 11:53:04.109  1531-1652  CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 253665015; UID 10219; state: ENABLED
+2026-02-26 11:53:04.154  1531-1651  CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 263076149; UID 10219; state: ENABLED
+2026-02-26 11:53:04.769  1531-1652  WM-WorkerWrapper        com.hypernews.app.debug              I  Worker result SUCCESS for Work [ id=9ebda1ca-8a69-4940-aec9-166cb5662a24, tags={ com.hypernews.app.worker.NewsSyncWorker } ]
+2026-02-26 11:53:04.955  1531-1683  HWUI                    com.hypernews.app.debug              W  Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+2026-02-26 11:53:04.956  1531-1683  HWUI                    com.hypernews.app.debug              W  Failed to initialize 101010-2 format, error = EGL_SUCCESS
+2026-02-26 11:53:05.056  1531-1655  HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 11:53:05.100  1531-1647  HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 11:53:05.202   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:05.427   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:05.640   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:05.855   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:06.291   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:06.505   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:06.719   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:06.937   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:07.367   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:07.582   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:07.795   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:08.011   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:08.441   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:08.655   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:08.872   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:09.086   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:09.517   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:09.728   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:09.941   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:10.155   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:10.469  1531-1647  HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 11:53:10.612   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:10.829   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:11.045   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:11.259   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:11.709   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:11.923   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:12.137   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:12.364   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:12.811   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:13.035   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:13.255   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:13.479   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:13.937   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:14.054  1531-1655  HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 11:53:14.169   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:14.388   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:14.607   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:15.039   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:15.254   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:15.473   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:15.690   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:16.193   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:16.407   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:16.640   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:16.863   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:17.323   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:17.547   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:17.769   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:18.003   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:18.206  1531-1531  NavController           com.hypernews.app.debug              I  Ignoring popBackStack to destination -1457927832 as it was not found on the current back stack
+2026-02-26 11:53:18.450   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:18.677   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:18.897   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:19.118   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:19.560   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:19.786   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:20.002   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:20.214   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:20.650   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:20.866   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:21.082   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:21.302   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:21.747   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:21.974   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:22.192   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:22.355  1531-1531  NavController           com.hypernews.app.debug              I  Ignoring popBackStack to destination -1457927832 as it was not found on the current back stack
+2026-02-26 11:53:22.410   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:22.853   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:23.085   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:23.321   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:23.550   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:23.984   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:24.199   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:24.413   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:24.537  1531-1960  DynamiteModule          com.hypernews.app.debug              W  Local module descriptor class for com.google.android.gms.providerinstaller.dynamite not found.
+2026-02-26 11:53:24.544  1531-1960  DynamiteModule          com.hypernews.app.debug              I  Considering local module com.google.android.gms.providerinstaller.dynamite:0 and remote module com.google.android.gms.providerinstaller.dynamite:0
+2026-02-26 11:53:24.545  1531-1960  ProviderInstaller       com.hypernews.app.debug              W  Failed to load providerinstaller module: No acceptable module com.google.android.gms.providerinstaller.dynamite found. Local version is 0 and remote version is 0.
+2026-02-26 11:53:24.546  1531-1960  ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+2026-02-26 11:53:24.547  1531-1960  ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/com.android.location.provider.jar
+2026-02-26 11:53:24.547  1531-1960  ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/com.android.media.remotedisplay.jar
+2026-02-26 11:53:24.548  1531-1960  ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+2026-02-26 11:53:24.548  1531-1960  ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+2026-02-26 11:53:24.550  1531-1960  ProviderInstaller       com.hypernews.app.debug              W  Failed to report request stats: com.google.android.gms.common.security.ProviderInstallerImpl.reportRequestStats [class android.content.Context, long, long]
+2026-02-26 11:53:24.588  1531-1964  gabz                    com.hypernews.app.debug              I  Unable to retrieve flag snapshot for com.google.android.gms.providerinstaller#com.hypernews.app.debug, using defaults.
+2026-02-26 11:53:24.600  1531-1960  nativeloader            com.hypernews.app.debug              D  Load /data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/base.apk!/lib/x86_64/libconscrypt_gmscore_jni.so using class loader ns clns-10 (caller=/data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/base.apk): ok
+2026-02-26 11:53:24.608  1531-1960  NativeCrypto            com.hypernews.app.debug              V  Registering com/google/android/gms/org/conscrypt/NativeCrypto's 334 native methods...
+2026-02-26 11:53:24.624  1531-1960  rnews.app.debug         com.hypernews.app.debug              I  hiddenapi: Accessing hidden method Ljava/security/spec/ECParameterSpec;->getCurveName()Ljava/lang/String; (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app) using reflection: allowed
+2026-02-26 11:53:24.629  1531-1962  GoogleApiManager        com.hypernews.app.debug              E  Failed to get service from broker.  (Fix with AI)
+                                                                                                    java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+                                                                                                    	at android.os.Parcel.createExceptionOrNull(Parcel.java:3340)
+                                                                                                    	at android.os.Parcel.createException(Parcel.java:3324)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3307)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3249)
+                                                                                                    	at beux.a(:com.google.android.gms@260534038@26.05.34 (260800-869443408):36)
+                                                                                                    	at besy.z(:com.google.android.gms@260534038@26.05.34 (260800-869443408):143)
+                                                                                                    	at bdze.run(:com.google.android.gms@260534038@26.05.34 (260800-869443408):42)
                                                                                                     	at android.os.Handler.handleCallback(Handler.java:995)
                                                                                                     	at android.os.Handler.dispatchMessage(Handler.java:103)
+                                                                                                    	at ctdy.mv(:com.google.android.gms@260534038@26.05.34 (260800-869443408):1)
+                                                                                                    	at ctdy.dispatchMessage(:com.google.android.gms@260534038@26.05.34 (260800-869443408):5)
                                                                                                     	at android.os.Looper.loopOnce(Looper.java:248)
                                                                                                     	at android.os.Looper.loop(Looper.java:338)
-                                                                                                    	at android.app.ActivityThread.main(ActivityThread.java:9067)
-                                                                                                    	at java.lang.reflect.Method.invoke(Native Method)
-                                                                                                    	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
-                                                                                                    	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
-2026-02-26 11:21:59.654 32012-32012 Process                 com.hypernews.app.debug              I  Sending signal. PID: 32012 SIG: 9
----------------------------- PROCESS ENDED (32012) for package com.hypernews.app.debug ----------------------------
----------------------------- PROCESS STARTED (32175) for package com.hypernews.app.debug ----------------------------
-2026-02-26 11:22:00.878 32175-32175 nativeloader            com.hypernews.app.debug              D  Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
-2026-02-26 11:22:00.928 32175-32175 nativeloader            com.hypernews.app.debug              D  Load /data/user/0/com.hypernews.app.debug/code_cache/startup_agents/4d42d08a-agent.so using system ns (caller=<unknown>): ok
-2026-02-26 11:22:00.925 32175-32175 re-initialized>         com.hypernews.app.debug              W  type=1400 audit(0.0:1555): avc:  granted  { execute } for  path="/data/data/com.hypernews.app.debug/code_cache/startup_agents/4d42d08a-agent.so" dev="dm-55" ino=377370 scontext=u:r:untrusted_app:s0:c218,c256,c512,c768 tcontext=u:object_r:app_data_file:s0:c218,c256,c512,c768 tclass=file app=com.hypernews.app.debug
-2026-02-26 11:22:00.938 32175-32175 rnews.app.debug         com.hypernews.app.debug              W  hiddenapi: DexFile /data/data/com.hypernews.app.debug/code_cache/.studio/instruments-855ca6dc.jar is in boot class path but is not in a known location
-2026-02-26 11:22:01.213 32175-32175 rnews.app.debug         com.hypernews.app.debug              W  Redefining intrinsic method java.lang.Thread java.lang.Thread.currentThread(). This may cause the unexpected use of the original definition of java.lang.Thread java.lang.Thread.currentThread()in methods that have already been compiled.
-2026-02-26 11:22:01.213 32175-32175 rnews.app.debug         com.hypernews.app.debug              W  Redefining intrinsic method boolean java.lang.Thread.interrupted(). This may cause the unexpected use of the original definition of boolean java.lang.Thread.interrupted()in methods that have already been compiled.
-2026-02-26 11:22:01.228 32175-32175 CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 242716250; UID 10218; state: ENABLED
-2026-02-26 11:22:01.866 32175-32175 nativeloader            com.hypernews.app.debug              D  Configuring clns-9 for other apk /data/app/~~_W9BksitGLJvL-Zp3FqTvg==/com.hypernews.app.debug-cq1xnNcREh6EM-PAAFMiFA==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~_W9BksitGLJvL-Zp3FqTvg==/com.hypernews.app.debug-cq1xnNcREh6EM-PAAFMiFA==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.hypernews.app.debug
-2026-02-26 11:22:01.875 32175-32175 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153c9b358) locale list changing from [] to [en-US]
-2026-02-26 11:22:01.878 32175-32175 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153c9cc58) locale list changing from [] to [en-US]
-2026-02-26 11:22:01.889 32175-32175 GraphicsEnvironment     com.hypernews.app.debug              V  Currently set values for:
-2026-02-26 11:22:01.889 32175-32175 GraphicsEnvironment     com.hypernews.app.debug              V    angle_gl_driver_selection_pkgs=[]
-2026-02-26 11:22:01.889 32175-32175 GraphicsEnvironment     com.hypernews.app.debug              V    angle_gl_driver_selection_values=[]
-2026-02-26 11:22:01.889 32175-32175 GraphicsEnvironment     com.hypernews.app.debug              V  com.hypernews.app.debug is not listed in per-application setting
-2026-02-26 11:22:01.889 32175-32175 GraphicsEnvironment     com.hypernews.app.debug              V  ANGLE allowlist from config: com.dreamgames.royalmatch com.dts.freefiremax com.dxx.firenow com.gramgames.mergedragons com.ludo.king com.mojang.minecraftpe com.my.defense com.nintendo.zaka com.os.airforce com.playrix.fishdomdd.gplay io.teslatech.callbreak jp.konami.prospia net.peakgames.toonblast
-2026-02-26 11:22:01.889 32175-32175 GraphicsEnvironment     com.hypernews.app.debug              V  com.hypernews.app.debug is not listed in ANGLE allowlist or settings, returning default
-2026-02-26 11:22:01.889 32175-32175 GraphicsEnvironment     com.hypernews.app.debug              V  Neither updatable production driver nor prerelease driver is supported.
-2026-02-26 11:22:01.923 32175-32193 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
-2026-02-26 11:22:01.923 32175-32193 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/com.android.location.provider.jar
-2026-02-26 11:22:01.923 32175-32193 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/com.android.media.remotedisplay.jar
-2026-02-26 11:22:01.923 32175-32193 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
-2026-02-26 11:22:01.923 32175-32193 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
-2026-02-26 11:22:01.928 32175-32193 rnews.app.debug         com.hypernews.app.debug              W  Loading /data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/oat/x86_64/base.odex non-executable as it requires an image which we failed to load
-2026-02-26 11:22:01.932 32175-32193 nativeloader            com.hypernews.app.debug              D  Configuring clns-10 for other apk /data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/lib/x86_64:/data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
-2026-02-26 11:22:01.944 32175-32193 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153ca5f38) locale list changing from [] to [en-US]
-2026-02-26 11:22:01.983 32175-32175 FirebaseApp             com.hypernews.app.debug              I  Device unlocked: initializing all Firebase APIs for app [DEFAULT]
-2026-02-26 11:22:01.984 32175-32193 FA                      com.hypernews.app.debug              V  Deferring to Google Analytics for Firebase for event data collection. https://firebase.google.com/docs/analytics
-2026-02-26 11:22:02.011 32175-32193 rnews.app.debug         com.hypernews.app.debug              W  ClassLoaderContext classpath size mismatch. expected=1, found=0 (DLC[];PCL[base.apk*3272856420]{PCL[/system/framework/org.apache.http.legacy.jar*4247870504]#PCL[/system/framework/com.android.location.provider.jar*1570284764]#PCL[/system/framework/com.android.media.remotedisplay.jar*487574312]#PCL[/system_ext/framework/androidx.window.extensions.jar*1030441313]#PCL[/system_ext/framework/androidx.window.sidecar.jar*3860983653]} | DLC[];PCL[])
-2026-02-26 11:22:02.016 32175-32193 DynamiteModule          com.hypernews.app.debug              I  Considering local module com.google.android.gms.ads.dynamite:0 and remote module com.google.android.gms.ads.dynamite:254380203
-2026-02-26 11:22:02.016 32175-32193 DynamiteModule          com.hypernews.app.debug              I  Selected remote version of com.google.android.gms.ads.dynamite, version >= 254380203
-2026-02-26 11:22:02.017 32175-32193 DynamiteModule          com.hypernews.app.debug              V  Dynamite loader version >= 2, using loadModule2NoCrashUtils
-2026-02-26 11:22:02.020 32175-32195 DynamiteModule          com.hypernews.app.debug              I  Considering local module com.google.android.gms.measurement.dynamite:100 and remote module com.google.android.gms.measurement.dynamite:177
-2026-02-26 11:22:02.020 32175-32195 DynamiteModule          com.hypernews.app.debug              I  Selected remote version of com.google.android.gms.measurement.dynamite, version >= 177
-2026-02-26 11:22:02.020 32175-32195 DynamiteModule          com.hypernews.app.debug              V  Dynamite loader version >= 2, using loadModule2NoCrashUtils
-2026-02-26 11:22:02.039 32175-32195 System                  com.hypernews.app.debug              W  ClassLoader referenced unknown path: 
-2026-02-26 11:22:02.039 32175-32195 nativeloader            com.hypernews.app.debug              D  Configuring clns-11 for other apk . target_sdk_version=36, uses_libraries=, library_path=/data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/lib/x86_64:/data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/base.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
-2026-02-26 11:22:02.042 32175-32197 ashmem                  com.hypernews.app.debug              E  Pinning is deprecated since Android Q. Please use trim or other methods.
-2026-02-26 11:22:02.067 32175-32175 CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 3400644; UID 10218; state: ENABLED
-2026-02-26 11:22:02.073 32175-32175 FirebaseInitProvider    com.hypernews.app.debug              I  FirebaseApp initialization successful
-2026-02-26 11:22:02.075 32175-32195 rnews.app.debug         com.hypernews.app.debug              W  ClassLoaderContext classpath size mismatch. expected=1, found=5 (DLC[];PCL[base.apk*3272856420]{PCL[/system/framework/org.apache.http.legacy.jar*4247870504]#PCL[/system/framework/com.android.location.provider.jar*1570284764]#PCL[/system/framework/com.android.media.remotedisplay.jar*487574312]#PCL[/system_ext/framework/androidx.window.extensions.jar*1030441313]#PCL[/system_ext/framework/androidx.window.sidecar.jar*3860983653]} | DLC[];PCL[/data/data/com.hypernews.app.debug/code_cache/.overlay/base.apk/classes6.dex*3275083668:/data/data/com.hypernews.app.debug/code_cache/.overlay/base.apk/classes16.dex*371692779:/data/data/com.hypernews.app.debug/code_cache/.overlay/base.apk/classes17.dex*3255396353:/data/data/com.hypernews.app.debug/code_cache/.overlay/base.apk/classes4.dex*812741802:/data/app/~~_W9BksitGLJvL-Zp3FqTvg==/com.hypernews.app.debug-cq1xnNcREh6EM-PAAFMiFA==/base.apk*2428158899])
-2026-02-26 11:22:02.099 32175-32195 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153ca1a78) locale list changing from [] to [en-US]
-2026-02-26 11:22:02.101 32175-32195 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153ca9db8) locale list changing from [] to [en-US]
-2026-02-26 11:22:02.129 32175-32193 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153ca7e78) locale list changing from [] to [en-US]
-2026-02-26 11:22:02.167 32175-32204 DisplayManager          com.hypernews.app.debug              I  Choreographer implicitly registered for the refresh rate.
-2026-02-26 11:22:02.173 32175-32175 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153ca4f98) locale list changing from [] to [en-US]
-2026-02-26 11:22:02.203 32175-32204 EGL_emulation           com.hypernews.app.debug              I  Opening libGLESv1_CM_emulation.so
-2026-02-26 11:22:02.204 32175-32204 EGL_emulation           com.hypernews.app.debug              I  Opening libGLESv2_emulation.so
-2026-02-26 11:22:02.235 32175-32206 rnews.app.debug         com.hypernews.app.debug              I  hiddenapi: Accessing hidden method Ldalvik/system/VMStack;->getStackClass2()Ljava/lang/Class; (runtime_flags=0, domain=core-platform, api=unsupported) from Lm7/aow; (domain=app) using reflection: allowed
-2026-02-26 11:22:02.248 32175-32204 HWUI                    com.hypernews.app.debug              W  Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
-2026-02-26 11:22:02.248 32175-32204 HWUI                    com.hypernews.app.debug              W  Failed to initialize 101010-2 format, error = EGL_SUCCESS
-2026-02-26 11:22:02.252 32175-32175 DesktopModeFlags        com.hypernews.app.debug              D  Toggle override initialized to: OVERRIDE_UNSET
-2026-02-26 11:22:02.260 32175-32206 PhClient                com.hypernews.app.debug              I  Unable to retrieve flag snapshot for com.google.android.gms.measurement#com.hypernews.app.debug, using defaults.
-2026-02-26 11:22:02.272 32175-32203 rnews.app.debug         com.hypernews.app.debug              E  No package ID 6a found for resource ID 0x6a0b0013.
-2026-02-26 11:22:02.276 32175-32203 FA                      com.hypernews.app.debug              I  App measurement initialized, version: 153000
-2026-02-26 11:22:02.276 32175-32203 FA                      com.hypernews.app.debug              I  To enable debug logging run: adb shell setprop log.tag.FA VERBOSE
-2026-02-26 11:22:02.276 32175-32203 FA                      com.hypernews.app.debug              I  To enable faster debug mode event logging run:
-                                                                                                      adb shell setprop debug.firebase.analytics.app com.hypernews.app.debug
-2026-02-26 11:22:02.374 32175-32203 FA                      com.hypernews.app.debug              I  Tag Manager is not found and thus will not be used
-2026-02-26 11:22:02.400 32175-32175 HWUI                    com.hypernews.app.debug              W  Unknown dataspace 0
-2026-02-26 11:22:03.101 32175-32180 rnews.app.debug         com.hypernews.app.debug              I  Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
-2026-02-26 11:22:03.436 32175-32175 Choreographer           com.hypernews.app.debug              I  Skipped 52 frames!  The application may be doing too much work on its main thread.
-2026-02-26 11:22:03.438 32175-32185 HWUI                    com.hypernews.app.debug              I  Davey! duration=1011ms; Flags=1, FrameTimelineVsyncId=4483289, IntendedVsync=22805623875568, Vsync=22805623875568, InputEventId=0, HandleInputStart=22805625227700, AnimationStart=22805625243400, PerformTraversalsStart=22805625264000, DrawStart=22806561243200, FrameDeadline=22805640542234, FrameStartTime=22805625196100, FrameInterval=16666666, WorkloadTarget=16666666, SyncQueued=22806579853300, SyncStart=22806585925600, IssueDrawCommandsStart=22806586216100, SwapBuffers=22806622021100, FrameCompleted=22806640982700, DequeueBufferDuration=40900, QueueBufferDuration=371900, GpuCompleted=22806640982700, SwapBuffersCompleted=22806626524400, DisplayPresentTime=0, CommandSubmissionCompleted=22806622021100, 
-2026-02-26 11:22:03.488 32175-32217 HWUI                    com.hypernews.app.debug              I  Davey! duration=917ms; Flags=0, FrameTimelineVsyncId=4483325, IntendedVsync=22805773875562, Vsync=22806640542194, InputEventId=0, HandleInputStart=22806645606700, AnimationStart=22806645621700, PerformTraversalsStart=22806682667000, DrawStart=22806683176500, FrameDeadline=22806673875526, FrameStartTime=22806643303700, FrameInterval=16666666, WorkloadTarget=16666666, SyncQueued=22806687187400, SyncStart=22806687606900, IssueDrawCommandsStart=22806687726900, SwapBuffers=22806688718500, FrameCompleted=22806691354900, DequeueBufferDuration=49700, QueueBufferDuration=426000, GpuCompleted=22806691354900, SwapBuffersCompleted=22806690207400, DisplayPresentTime=0, CommandSubmissionCompleted=22806688718500, 
-2026-02-26 11:22:03.501 32175-32175 InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
-2026-02-26 11:22:03.501 32175-32175 ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:cda0388: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
-2026-02-26 11:22:07.744 32175-32225 ProfileInstaller        com.hypernews.app.debug              D  Installing profile for com.hypernews.app.debug
+                                                                                                    	at android.os.HandlerThread.run(HandlerThread.java:85)
+2026-02-26 11:53:24.630   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:24.683  1531-1962  GoogleApiManager        com.hypernews.app.debug              W  Not showing notification since connectionResult is not user-facing: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+2026-02-26 11:53:24.690  1531-1960  ProviderInstaller       com.hypernews.app.debug              I  Installed default security provider GmsCore_OpenSSL
+2026-02-26 11:53:24.691  1531-1961  FlagRegistrar           com.hypernews.app.debug              W  Failed to register com.google.android.gms.providerinstaller#com.hypernews.app.debug (Fix with AI)
+                                                                                                    gacl: 17: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+                                                                                                    	at gacn.a(:com.google.android.gms@260534038@26.05.34 (260800-869443408):13)
+                                                                                                    	at gykt.d(:com.google.android.gms@260534038@26.05.34 (260800-869443408):3)
+                                                                                                    	at gykv.run(:com.google.android.gms@260534038@26.05.34 (260800-869443408):130)
+                                                                                                    	at gync.execute(:com.google.android.gms@260534038@26.05.34 (260800-869443408):1)
+                                                                                                    	at gyld.f(:com.google.android.gms@260534038@26.05.34 (260800-869443408):1)
+                                                                                                    	at gyld.m(:com.google.android.gms@260534038@26.05.34 (260800-869443408):99)
+                                                                                                    	at gyld.r(:com.google.android.gms@260534038@26.05.34 (260800-869443408):17)
+                                                                                                    	at fsqo.hy(:com.google.android.gms@260534038@26.05.34 (260800-869443408):35)
+                                                                                                    	at fftl.run(:com.google.android.gms@260534038@26.05.34 (260800-869443408):12)
+                                                                                                    	at gync.execute(:com.google.android.gms@260534038@26.05.34 (260800-869443408):1)
+                                                                                                    	at fftm.b(:com.google.android.gms@260534038@26.05.34 (260800-869443408):18)
+                                                                                                    	at ffub.b(:com.google.android.gms@260534038@26.05.34 (260800-869443408):34)
+                                                                                                    	at ffud.d(:com.google.android.gms@260534038@26.05.34 (260800-869443408):25)
+                                                                                                    	at bdwn.c(:com.google.android.gms@260534038@26.05.34 (260800-869443408):9)
+                                                                                                    	at bdzc.q(:com.google.android.gms@260534038@26.05.34 (260800-869443408):48)
+                                                                                                    	at bdzc.d(:com.google.android.gms@260534038@26.05.34 (260800-869443408):10)
+                                                                                                    	at bdzc.g(:com.google.android.gms@260534038@26.05.34 (260800-869443408):191)
+                                                                                                    	at bdzc.onConnectionFailed(:com.google.android.gms@260534038@26.05.34 (260800-869443408):2)
+                                                                                                    	at bdze.run(:com.google.android.gms@260534038@26.05.34 (260800-869443408):70)
+                                                                                                    	at android.os.Handler.handleCallback(Handler.java:995)
+                                                                                                    	at android.os.Handler.dispatchMessage(Handler.java:103)
+                                                                                                    	at ctdy.mv(:com.google.android.gms@260534038@26.05.34 (260800-869443408):1)
+                                                                                                    	at ctdy.dispatchMessage(:com.google.android.gms@260534038@26.05.34 (260800-869443408):5)
+                                                                                                    	at android.os.Looper.loopOnce(Looper.java:248)
+                                                                                                    	at android.os.Looper.loop(Looper.java:338)
+                                                                                                    	at android.os.HandlerThread.run(HandlerThread.java:85)
+                                                                                                    Caused by: bduu: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+                                                                                                    	at besk.a(:com.google.android.gms@260534038@26.05.34 (260800-869443408):15)
+                                                                                                    	at bdwq.a(:com.google.android.gms@260534038@26.05.34 (260800-869443408):1)
+                                                                                                    	at bdwn.c(:com.google.android.gms@260534038@26.05.34 (260800-869443408):5)
+                                                                                                    	... 12 more
+2026-02-26 11:53:25.114   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:25.143  1531-1979  rnews.app.debug         com.hypernews.app.debug              I  hiddenapi: Accessing hidden field Ljava/net/Socket;->impl:Ljava/net/SocketImpl; (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app) using reflection: allowed
+2026-02-26 11:53:25.225  1531-1979  rnews.app.debug         com.hypernews.app.debug              I  hiddenapi: Accessing hidden method Ljava/security/spec/ECParameterSpec;->setCurveName(Ljava/lang/String;)V (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app) using reflection: allowed
+2026-02-26 11:53:25.338   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:25.559   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:25.796   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:26.230   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:26.442   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:26.656   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:26.870   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:27.304   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:27.518   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:27.731   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:27.947   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:28.402   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:28.619   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:28.837   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:29.054   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:29.485   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:29.699   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:29.915   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:30.131   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:30.561   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:30.776   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:30.992   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:31.214   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:31.649   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:31.865   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:32.081   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:32.298   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:32.746   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:32.969   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:33.195   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
+2026-02-26 11:53:33.417   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10219
