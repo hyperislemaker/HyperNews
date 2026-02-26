@@ -1,5 +1,6 @@
 package com.hypernews.app.presentation.screens.auth
 
+import android.app.Activity
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -8,7 +9,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -24,6 +25,9 @@ fun LoginScreen(
     viewModel: LoginViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    val context = LocalContext.current
+    val activity = context as? Activity
+    
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var showPassword by remember { mutableStateOf(false) }
@@ -53,7 +57,7 @@ fun LoginScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Telegram Style News",
+            text = "HyperNews",
             style = MaterialTheme.typography.headlineMedium
         )
 
@@ -67,9 +71,11 @@ fun LoginScreen(
 
         // Google Sign-In
         OutlinedButton(
-            onClick = { viewModel.signInWithGoogle() },
+            onClick = { 
+                activity?.let { viewModel.signInWithGoogle(it) }
+            },
             modifier = Modifier.fillMaxWidth(),
-            enabled = !uiState.isLoading
+            enabled = !uiState.isLoading && activity != null
         ) {
             Icon(
                 imageVector = Icons.Default.AccountCircle,

@@ -1,10 +1,18 @@
 package com.hypernews.app.data.remote.firebase
 
-import com.hypernews.app.domain.common.AppError
-import com.hypernews.app.domain.common.Result
+import android.content.Context
+import androidx.credentials.CredentialManager
+import androidx.credentials.CustomCredential
+import androidx.credentials.GetCredentialRequest
+import androidx.credentials.GetCredentialResponse
+import com.google.android.libraries.identity.googleid.GetGoogleIdOption
+import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
+import com.hypernews.app.domain.common.AppError
+import com.hypernews.app.domain.common.Result
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
@@ -15,8 +23,15 @@ import javax.inject.Singleton
 
 @Singleton
 class AuthManager @Inject constructor(
-    private val firebaseAuth: FirebaseAuth
+    private val firebaseAuth: FirebaseAuth,
+    @ApplicationContext private val context: Context
 ) {
+    companion object {
+        private const val WEB_CLIENT_ID = "306625625799-19rnfublglq1vmsov5t8ve5mqv05nk9f.apps.googleusercontent.com"
+    }
+    
+    private val credentialManager = CredentialManager.create(context)
+    
     fun getCurrentUser(): FirebaseUser? = firebaseAuth.currentUser
     val isLoggedIn: Boolean get() = getCurrentUser() != null
     
@@ -26,11 +41,46 @@ class AuthManager @Inject constructor(
         awaitClose { firebaseAuth.removeAuthStateListener(listener) }
     }
     
-    fun signInWithGoogle(): Flow<Result<FirebaseUser>> = flow {
-        emit(Result.Loading)
-        // Note: In real implementation, this would use Google Sign-In SDK
-        // For now, emit error as it requires Activity context
-        emit(Result.Error(AppError.AuthError("Google Sign-In requires Activity context")))
+    suspend fun signInWithGoogle(activityContext: Context): Result<FirebaseUser> {
+        return try {
+            val googleIdOption = GetGoogleIdOption.Builder()
+                .setFilterByAuthorizedAccounts(false)
+                .setServerClientId(WEB_CLIENT_ID)
+                .setAutoSelectEnabled(false)
+                .build()
+            
+            val request = GetCredentialRequest.Builder()
+                .addCredentialOption(googleIdOption)
+                .build()
+            
+            val result = credentialManager.getCredential(activityContext, request)
+            handleSignInResult(result)
+        } catch (e: Exception) {
+            Result.Error(AppError.AuthError(e.message ?: "Google ile giriş başarısız"))
+        }
+    }
+    
+    private suspend fun handleSignInResult(result: GetCredentialResponse): Result<FirebaseUser> {
+        val credential = result.credential
+        
+        return when (credential) {
+            is CustomCredential -> {
+                if (credential.type == GoogleIdTokenCredential.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL) {
+                    val googleIdTokenCredential = GoogleIdTokenCredential.createFrom(credential.data)
+                    val idToken = googleIdTokenCredential.idToken
+                    
+                    val firebaseCredential = GoogleAuthProvider.getCredential(idToken, null)
+                    val authResult = firebaseAuth.signInWithCredential(firebaseCredential).await()
+                    
+                    authResult.user?.let {
+                        Result.Success(it)
+                    } ?: Result.Error(AppError.AuthError("Google ile giriş başarısız"))
+                } else {
+                    Result.Error(AppError.AuthError("Beklenmeyen credential tipi"))
+                }
+            }
+            else -> Result.Error(AppError.AuthError("Beklenmeyen credential tipi"))
+        }
     }
     
     fun signInWithEmail(email: String, password: String): Flow<Result<FirebaseUser>> = flow {

@@ -123,6 +123,9 @@ dependencies {
 
     // Google Play Services
     implementation(libs.play.services.auth)
+    implementation(libs.credentials)
+    implementation(libs.credentials.play.services)
+    implementation(libs.googleid)
 
     // Google Play Billing
     implementation(libs.bundles.billing)

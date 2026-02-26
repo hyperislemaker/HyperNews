@@ -1,5 +1,6 @@
 package com.hypernews.app.presentation.screens.auth
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hypernews.app.data.remote.firebase.AuthManager
@@ -26,27 +27,25 @@ class LoginViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(LoginUiState())
     val uiState: StateFlow<LoginUiState> = _uiState.asStateFlow()
 
-    fun signInWithGoogle() {
+    fun signInWithGoogle(activityContext: Context) {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, error = null) }
             
-            authManager.signInWithGoogle().collect { result ->
-                when (result) {
-                    is Result.Success -> {
-                        val user = result.data
-                        checkIfNewUser(user.uid)
+            when (val result = authManager.signInWithGoogle(activityContext)) {
+                is Result.Success -> {
+                    val user = result.data
+                    checkIfNewUser(user.uid)
+                }
+                is Result.Error -> {
+                    _uiState.update { state ->
+                        state.copy(
+                            isLoading = false,
+                            error = result.error.message ?: "Google ile giriş başarısız"
+                        )
                     }
-                    is Result.Error -> {
-                        _uiState.update { state ->
-                            state.copy(
-                                isLoading = false,
-                                error = result.error.message ?: "Google ile giriş başarısız"
-                            )
-                        }
-                    }
-                    is Result.Loading -> {
-                        _uiState.update { it.copy(isLoading = true) }
-                    }
+                }
+                is Result.Loading -> {
+                    _uiState.update { it.copy(isLoading = true) }
                 }
             }
         }
