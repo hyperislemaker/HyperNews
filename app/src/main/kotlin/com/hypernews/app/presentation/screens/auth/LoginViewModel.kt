@@ -15,7 +15,13 @@ data class LoginUiState(
     val isLoading: Boolean = false,
     val isLoggedIn: Boolean = false,
     val isNewUser: Boolean = false,
-    val error: String? = null
+    val error: String? = null,
+    val needsEmailVerification: Boolean = false,
+    val verificationEmailSent: Boolean = false,
+    val pendingEmail: String? = null,
+    val pendingPassword: String? = null,
+    val showForgotPassword: Boolean = false,
+    val passwordResetSent: Boolean = false
 )
 
 @HiltViewModel
@@ -59,7 +65,22 @@ class LoginViewModel @Inject constructor(
                 when (result) {
                     is Result.Success -> {
                         val user = result.data
-                        checkIfNewUser(user.uid)
+                        // Check if email is verified
+                        if (!user.isEmailVerified) {
+                            // Sign out immediately - don't allow unverified users
+                            authManager.signOut()
+                            _uiState.update { state ->
+                                state.copy(
+                                    isLoading = false,
+                                    needsEmailVerification = true,
+                                    pendingEmail = email,
+                                    pendingPassword = password,
+                                    error = "Lütfen e-posta adresinizi doğrulayın. Gelen kutunuzu kontrol edin."
+                                )
+                            }
+                        } else {
+                            checkIfNewUser(user.uid)
+                        }
                     }
                     is Result.Error -> {
                         _uiState.update { state ->
@@ -84,11 +105,16 @@ class LoginViewModel @Inject constructor(
             authManager.signUpWithEmail(email, password).collect { result ->
                 when (result) {
                     is Result.Success -> {
+                        // Sign out after registration - user must verify email first
+                        authManager.signOut()
                         _uiState.update { state ->
                             state.copy(
                                 isLoading = false,
-                                isLoggedIn = true,
-                                isNewUser = true
+                                needsEmailVerification = true,
+                                verificationEmailSent = true,
+                                pendingEmail = email,
+                                pendingPassword = password,
+                                error = null
                             )
                         }
                     }
@@ -104,6 +130,162 @@ class LoginViewModel @Inject constructor(
                         _uiState.update { it.copy(isLoading = true) }
                     }
                 }
+            }
+        }
+    }
+
+    fun resendVerificationEmail() {
+        viewModelScope.launch {
+            val email = _uiState.value.pendingEmail
+            val password = _uiState.value.pendingPassword
+            
+            if (email == null || password == null) {
+                _uiState.update { it.copy(error = "Oturum bilgileri bulunamadı") }
+                return@launch
+            }
+            
+            _uiState.update { it.copy(isLoading = true, error = null) }
+            
+            // Sign in temporarily to resend verification email
+            authManager.signInWithEmail(email, password).collect { result ->
+                when (result) {
+                    is Result.Success -> {
+                        when (val resendResult = authManager.resendVerificationEmail()) {
+                            is Result.Success -> {
+                                authManager.signOut()
+                                _uiState.update { state ->
+                                    state.copy(
+                                        isLoading = false,
+                                        verificationEmailSent = true,
+                                        error = null
+                                    )
+                                }
+                            }
+                            is Result.Error -> {
+                                authManager.signOut()
+                                _uiState.update { state ->
+                                    state.copy(
+                                        isLoading = false,
+                                        error = resendResult.error.message
+                                    )
+                                }
+                            }
+                            else -> {}
+                        }
+                    }
+                    is Result.Error -> {
+                        _uiState.update { state ->
+                            state.copy(
+                                isLoading = false,
+                                error = getErrorMessage(result.error)
+                            )
+                        }
+                    }
+                    is Result.Loading -> {}
+                }
+            }
+        }
+    }
+
+    fun checkEmailVerification() {
+        viewModelScope.launch {
+            val email = _uiState.value.pendingEmail
+            val password = _uiState.value.pendingPassword
+            
+            if (email == null || password == null) {
+                _uiState.update { it.copy(error = "Oturum bilgileri bulunamadı") }
+                return@launch
+            }
+            
+            _uiState.update { it.copy(isLoading = true, error = null) }
+            
+            // Sign in to check verification status
+            authManager.signInWithEmail(email, password).collect { result ->
+                when (result) {
+                    is Result.Success -> {
+                        val user = result.data
+                        if (user.isEmailVerified) {
+                            // Email verified, proceed with login
+                            _uiState.update { 
+                                it.copy(
+                                    needsEmailVerification = false,
+                                    pendingEmail = null,
+                                    pendingPassword = null
+                                ) 
+                            }
+                            checkIfNewUser(user.uid)
+                        } else {
+                            authManager.signOut()
+                            _uiState.update { state ->
+                                state.copy(
+                                    isLoading = false,
+                                    error = "E-posta henüz doğrulanmamış. Lütfen gelen kutunuzu kontrol edin."
+                                )
+                            }
+                        }
+                    }
+                    is Result.Error -> {
+                        _uiState.update { state ->
+                            state.copy(
+                                isLoading = false,
+                                error = getErrorMessage(result.error)
+                            )
+                        }
+                    }
+                    is Result.Loading -> {}
+                }
+            }
+        }
+    }
+
+    fun clearVerificationState() {
+        _uiState.update { 
+            it.copy(
+                needsEmailVerification = false, 
+                verificationEmailSent = false,
+                pendingEmail = null,
+                pendingPassword = null,
+                error = null
+            ) 
+        }
+    }
+
+    fun showForgotPassword() {
+        _uiState.update { it.copy(showForgotPassword = true, error = null, passwordResetSent = false) }
+    }
+
+    fun hideForgotPassword() {
+        _uiState.update { it.copy(showForgotPassword = false, error = null, passwordResetSent = false) }
+    }
+
+    fun sendPasswordResetEmail(email: String) {
+        viewModelScope.launch {
+            if (email.isBlank()) {
+                _uiState.update { it.copy(error = "E-posta adresi gerekli") }
+                return@launch
+            }
+            
+            _uiState.update { it.copy(isLoading = true, error = null) }
+            
+            when (val result = authManager.sendPasswordResetEmail(email)) {
+                is Result.Success -> {
+                    _uiState.update { state ->
+                        state.copy(
+                            isLoading = false,
+                            passwordResetSent = true,
+                            error = null
+                        )
+                    }
+                }
+                is Result.Error -> {
+                    _uiState.update { state ->
+                        state.copy(
+                            isLoading = false,
+                            error = result.error.message ?: "Şifre sıfırlama maili gönderilemedi"
+                        )
+                    }
+                }
+                else -> {}
             }
         }
     }

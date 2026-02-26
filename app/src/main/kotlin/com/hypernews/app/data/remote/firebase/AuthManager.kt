@@ -129,11 +129,69 @@ class AuthManager @Inject constructor(
         emit(Result.Loading)
         try {
             val result = firebaseAuth.createUserWithEmailAndPassword(email, password).await()
-            result.user?.let { 
-                emit(Result.Success(it)) 
+            result.user?.let { user ->
+                // Send email verification
+                user.sendEmailVerification().await()
+                Log.d(TAG, "Verification email sent to ${user.email}")
+                emit(Result.Success(user))
             } ?: emit(Result.Error(AppError.AuthError("Kayıt başarısız")))
         } catch (e: Exception) {
+            Log.e(TAG, "Sign up error", e)
             emit(Result.Error(AppError.AuthError(e.message ?: "Kayıt başarısız")))
+        }
+    }
+    
+    /**
+     * Check if current user's email is verified
+     */
+    fun isEmailVerified(): Boolean {
+        return getCurrentUser()?.isEmailVerified == true
+    }
+    
+    /**
+     * Resend verification email to current user
+     */
+    suspend fun resendVerificationEmail(): Result<Unit> {
+        return try {
+            val user = getCurrentUser()
+            if (user == null) {
+                Result.Error(AppError.AuthError("Kullanıcı bulunamadı"))
+            } else if (user.isEmailVerified) {
+                Result.Error(AppError.AuthError("Email zaten doğrulanmış"))
+            } else {
+                user.sendEmailVerification().await()
+                Log.d(TAG, "Verification email resent to ${user.email}")
+                Result.Success(Unit)
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "Resend verification error", e)
+            Result.Error(AppError.AuthError(e.message ?: "Doğrulama maili gönderilemedi"))
+        }
+    }
+    
+    /**
+     * Reload user to get updated email verification status
+     */
+    suspend fun reloadUser(): Result<Boolean> {
+        return try {
+            getCurrentUser()?.reload()?.await()
+            Result.Success(getCurrentUser()?.isEmailVerified == true)
+        } catch (e: Exception) {
+            Result.Error(AppError.AuthError(e.message ?: "Kullanıcı bilgileri güncellenemedi"))
+        }
+    }
+    
+    /**
+     * Send password reset email
+     */
+    suspend fun sendPasswordResetEmail(email: String): Result<Unit> {
+        return try {
+            firebaseAuth.sendPasswordResetEmail(email).await()
+            Log.d(TAG, "Password reset email sent to $email")
+            Result.Success(Unit)
+        } catch (e: Exception) {
+            Log.e(TAG, "Password reset error", e)
+            Result.Error(AppError.AuthError(e.message ?: "Şifre sıfırlama maili gönderilemedi"))
         }
     }
     

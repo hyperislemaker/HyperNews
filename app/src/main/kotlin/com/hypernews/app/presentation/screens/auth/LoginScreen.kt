@@ -34,9 +34,34 @@ fun LoginScreen(
     var isSignUp by remember { mutableStateOf(false) }
 
     LaunchedEffect(uiState.isLoggedIn) {
-        if (uiState.isLoggedIn) {
+        if (uiState.isLoggedIn && !uiState.needsEmailVerification) {
             onLoginSuccess(uiState.isNewUser)
         }
+    }
+
+    // Email verification screen
+    if (uiState.needsEmailVerification) {
+        EmailVerificationScreen(
+            verificationEmailSent = uiState.verificationEmailSent,
+            isLoading = uiState.isLoading,
+            error = uiState.error,
+            onResendEmail = { viewModel.resendVerificationEmail() },
+            onCheckVerification = { viewModel.checkEmailVerification() },
+            onBack = { viewModel.clearVerificationState() }
+        )
+        return
+    }
+
+    // Forgot password screen
+    if (uiState.showForgotPassword) {
+        ForgotPasswordScreen(
+            isLoading = uiState.isLoading,
+            error = uiState.error,
+            passwordResetSent = uiState.passwordResetSent,
+            onSendResetEmail = { viewModel.sendPasswordResetEmail(it) },
+            onBack = { viewModel.hideForgotPassword() }
+        )
+        return
     }
 
     Column(
@@ -188,11 +213,220 @@ fun LoginScreen(
             )
         }
 
+        // Şifremi unuttum
+        if (!isSignUp) {
+            TextButton(onClick = { viewModel.showForgotPassword() }) {
+                Text("Şifremi unuttum")
+            }
+        }
+
         Spacer(modifier = Modifier.height(16.dp))
 
         // Atla
         TextButton(onClick = onSkip) {
             Text("Şimdilik atla")
+        }
+    }
+}
+
+@Composable
+private fun EmailVerificationScreen(
+    verificationEmailSent: Boolean,
+    isLoading: Boolean,
+    error: String?,
+    onResendEmail: () -> Unit,
+    onCheckVerification: () -> Unit,
+    onBack: () -> Unit
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Icon(
+            imageVector = Icons.Default.MarkEmailRead,
+            contentDescription = null,
+            modifier = Modifier.size(80.dp),
+            tint = MaterialTheme.colorScheme.primary
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        Text(
+            text = "E-posta Doğrulama",
+            style = MaterialTheme.typography.headlineSmall
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Text(
+            text = if (verificationEmailSent) 
+                "Doğrulama e-postası gönderildi! Lütfen gelen kutunuzu kontrol edin ve e-postadaki bağlantıya tıklayın."
+            else 
+                "Hesabınızı kullanabilmek için e-posta adresinizi doğrulamanız gerekiyor.",
+            style = MaterialTheme.typography.bodyMedium,
+            textAlign = TextAlign.Center,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+
+        if (error != null) {
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = error,
+                color = MaterialTheme.colorScheme.error,
+                style = MaterialTheme.typography.bodySmall,
+                textAlign = TextAlign.Center
+            )
+        }
+
+        Spacer(modifier = Modifier.height(32.dp))
+
+        Button(
+            onClick = onCheckVerification,
+            modifier = Modifier.fillMaxWidth(),
+            enabled = !isLoading
+        ) {
+            if (isLoading) {
+                CircularProgressIndicator(
+                    modifier = Modifier.size(20.dp),
+                    strokeWidth = 2.dp
+                )
+            } else {
+                Icon(Icons.Default.Refresh, contentDescription = null)
+                Spacer(modifier = Modifier.width(8.dp))
+                Text("Doğrulamayı Kontrol Et")
+            }
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        OutlinedButton(
+            onClick = onResendEmail,
+            modifier = Modifier.fillMaxWidth(),
+            enabled = !isLoading
+        ) {
+            Icon(Icons.Default.Send, contentDescription = null)
+            Spacer(modifier = Modifier.width(8.dp))
+            Text("Tekrar Gönder")
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        TextButton(onClick = onBack) {
+            Text("Geri Dön")
+        }
+    }
+}
+
+@Composable
+private fun ForgotPasswordScreen(
+    isLoading: Boolean,
+    error: String?,
+    passwordResetSent: Boolean,
+    onSendResetEmail: (String) -> Unit,
+    onBack: () -> Unit
+) {
+    var email by remember { mutableStateOf("") }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Icon(
+            imageVector = Icons.Default.LockReset,
+            contentDescription = null,
+            modifier = Modifier.size(80.dp),
+            tint = MaterialTheme.colorScheme.primary
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        Text(
+            text = "Şifre Sıfırlama",
+            style = MaterialTheme.typography.headlineSmall
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        if (passwordResetSent) {
+            Text(
+                text = "Şifre sıfırlama bağlantısı e-posta adresinize gönderildi. Lütfen gelen kutunuzu kontrol edin.",
+                style = MaterialTheme.typography.bodyMedium,
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.primary
+            )
+
+            Spacer(modifier = Modifier.height(32.dp))
+
+            Button(
+                onClick = onBack,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text("Giriş Ekranına Dön")
+            }
+        } else {
+            Text(
+                text = "E-posta adresinizi girin, size şifre sıfırlama bağlantısı gönderelim.",
+                style = MaterialTheme.typography.bodyMedium,
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            OutlinedTextField(
+                value = email,
+                onValueChange = { email = it },
+                label = { Text("E-posta") },
+                leadingIcon = { Icon(Icons.Default.Email, contentDescription = null) },
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Email,
+                    imeAction = ImeAction.Done
+                ),
+                modifier = Modifier.fillMaxWidth(),
+                enabled = !isLoading
+            )
+
+            if (error != null) {
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = error,
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodySmall,
+                    textAlign = TextAlign.Center
+                )
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Button(
+                onClick = { onSendResetEmail(email) },
+                modifier = Modifier.fillMaxWidth(),
+                enabled = email.isNotBlank() && !isLoading
+            ) {
+                if (isLoading) {
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(20.dp),
+                        strokeWidth = 2.dp
+                    )
+                } else {
+                    Icon(Icons.Default.Send, contentDescription = null)
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("Sıfırlama Bağlantısı Gönder")
+                }
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            TextButton(onClick = onBack) {
+                Text("Geri Dön")
+            }
         }
     }
 }
