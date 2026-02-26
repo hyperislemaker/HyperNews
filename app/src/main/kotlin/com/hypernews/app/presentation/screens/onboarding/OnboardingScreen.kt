@@ -10,6 +10,8 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -173,7 +175,7 @@ private fun WelcomePage() {
         Spacer(modifier = Modifier.height(32.dp))
 
         Text(
-            text = "Telegram Style News'e\nHoş Geldiniz",
+            text = "HyperNews'e\nHoş Geldiniz",
             style = MaterialTheme.typography.headlineLarge,
             textAlign = TextAlign.Center
         )
@@ -181,7 +183,7 @@ private fun WelcomePage() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Favori haber kaynaklarınızı takip edin,\nyorum yapın ve tepki verin.",
+            text = "Dünya ve Türkiye'den haberleri takip edin,\nyorum yapın ve tepki verin.",
             style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -196,6 +198,9 @@ private fun RssFeedSelectionPage(
     selectedFeeds: Set<String>,
     onToggleFeed: (DefaultRssFeed) -> Unit
 ) {
+    var selectedCategory by remember { mutableStateOf<String?>(null) }
+    val categories = feeds.map { it.category }.distinct()
+    
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -204,20 +209,64 @@ private fun RssFeedSelectionPage(
         Text(
             text = "Haber Kaynaklarını Seçin",
             style = MaterialTheme.typography.headlineMedium,
-            modifier = Modifier.padding(bottom = 8.dp)
+            modifier = Modifier.padding(bottom = 4.dp)
         )
 
         Text(
-            text = "Takip etmek istediğiniz kaynakları seçin. Daha sonra ayarlardan değiştirebilirsiniz.",
-            style = MaterialTheme.typography.bodyMedium,
+            text = "En az bir kaynak seçin. Daha sonra ayarlardan değiştirebilirsiniz.",
+            style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.padding(bottom = 16.dp)
+            modifier = Modifier.padding(bottom = 12.dp)
         )
+        
+        // Kategori filtreleri
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .horizontalScroll(rememberScrollState())
+                .padding(bottom = 12.dp),
+            horizontalArrangement = Arrangement.spacedBy(6.dp)
+        ) {
+            FilterChip(
+                selected = selectedCategory == null,
+                onClick = { selectedCategory = null },
+                label = { Text("Tümü", style = MaterialTheme.typography.labelSmall) }
+            )
+            categories.forEach { category ->
+                FilterChip(
+                    selected = selectedCategory == category,
+                    onClick = { selectedCategory = category },
+                    label = { Text(category, style = MaterialTheme.typography.labelSmall) }
+                )
+            }
+        }
+        
+        // Seçilen kaynak sayısı
+        Surface(
+            modifier = Modifier.fillMaxWidth(),
+            color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.5f),
+            shape = MaterialTheme.shapes.small
+        ) {
+            Text(
+                text = "${selectedFeeds.size} kaynak seçildi",
+                modifier = Modifier.padding(8.dp),
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.primary
+            )
+        }
+        
+        Spacer(modifier = Modifier.height(8.dp))
 
         LazyColumn(
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+            verticalArrangement = Arrangement.spacedBy(6.dp)
         ) {
-            val groupedFeeds = feeds.groupBy { it.category }
+            val filteredFeeds = if (selectedCategory != null) {
+                feeds.filter { it.category == selectedCategory }
+            } else {
+                feeds
+            }
+            
+            val groupedFeeds = filteredFeeds.groupBy { it.category }
             
             groupedFeeds.forEach { (category, categoryFeeds) ->
                 item {
@@ -225,7 +274,7 @@ private fun RssFeedSelectionPage(
                         text = category,
                         style = MaterialTheme.typography.titleSmall,
                         color = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier.padding(vertical = 8.dp)
+                        modifier = Modifier.padding(vertical = 4.dp)
                     )
                 }
                 
@@ -255,34 +304,35 @@ private fun FeedSelectionItem(
                 onValueChange = { onToggle() },
                 role = Role.Checkbox
             ),
-        shape = MaterialTheme.shapes.medium,
+        shape = MaterialTheme.shapes.small,
         color = if (isSelected)
-            MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.5f)
+            MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.7f)
         else
-            MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
+            MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.3f)
     ) {
         Row(
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                imageVector = Icons.Default.RssFeed,
-                contentDescription = null,
-                tint = if (isSelected)
-                    MaterialTheme.colorScheme.primary
-                else
-                    MaterialTheme.colorScheme.onSurfaceVariant
-            )
-            Spacer(modifier = Modifier.width(16.dp))
-            Text(
-                text = feed.name,
-                style = MaterialTheme.typography.bodyLarge,
-                modifier = Modifier.weight(1f)
-            )
             Checkbox(
                 checked = isSelected,
-                onCheckedChange = null
+                onCheckedChange = null,
+                modifier = Modifier.size(20.dp)
             )
+            Spacer(modifier = Modifier.width(12.dp))
+            Text(
+                text = feed.name,
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.weight(1f)
+            )
+            if (isSelected) {
+                Icon(
+                    imageVector = Icons.Default.Check,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.size(18.dp)
+                )
+            }
         }
     }
 }

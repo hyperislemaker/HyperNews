@@ -44,23 +44,38 @@ class OnboardingViewModel @Inject constructor(
 
     private fun loadDefaultFeeds() {
         val feeds = listOf(
-            // Genel Haberler
-            DefaultRssFeed("NTV", "https://www.ntv.com.tr/son-dakika.rss", "Genel Haberler"),
-            DefaultRssFeed("Sözcü", "https://www.sozcu.com.tr/rss/tum-haberler.xml", "Genel Haberler"),
-            DefaultRssFeed("Hürriyet", "https://www.hurriyet.com.tr/rss/anasayfa", "Genel Haberler"),
+            // Türkiye
+            DefaultRssFeed("NTV", "https://www.ntv.com.tr/son-dakika.rss", "Türkiye"),
+            DefaultRssFeed("Hürriyet", "https://www.hurriyet.com.tr/rss/gundem", "Türkiye"),
+            DefaultRssFeed("Sözcü", "https://www.sozcu.com.tr/rss/gundem.xml", "Türkiye"),
+            DefaultRssFeed("CNN Türk", "https://www.cnnturk.com/feed/rss/turkiye/news", "Türkiye"),
+            DefaultRssFeed("TRT Haber", "https://www.trthaber.com/sondakika.rss", "Türkiye"),
+            DefaultRssFeed("BBC Türkçe", "https://feeds.bbci.co.uk/turkce/rss.xml", "Türkiye"),
+            
+            // Dünya
+            DefaultRssFeed("BBC News", "https://feeds.bbci.co.uk/news/world/rss.xml", "Dünya"),
+            DefaultRssFeed("CNN", "http://rss.cnn.com/rss/edition_world.rss", "Dünya"),
+            DefaultRssFeed("The Guardian", "https://www.theguardian.com/world/rss", "Dünya"),
+            DefaultRssFeed("Al Jazeera", "https://www.aljazeera.com/xml/rss/all.xml", "Dünya"),
             
             // Teknoloji
             DefaultRssFeed("Webtekno", "https://www.webtekno.com/rss.xml", "Teknoloji"),
-            DefaultRssFeed("ShiftDelete", "https://shiftdelete.net/feed", "Teknoloji"),
-            DefaultRssFeed("Technopat", "https://www.technopat.net/feed/", "Teknoloji"),
+            DefaultRssFeed("Shiftdelete", "https://shiftdelete.net/feed", "Teknoloji"),
+            DefaultRssFeed("TechCrunch", "https://techcrunch.com/feed/", "Teknoloji"),
+            DefaultRssFeed("The Verge", "https://www.theverge.com/rss/index.xml", "Teknoloji"),
             
             // Ekonomi
             DefaultRssFeed("Bloomberg HT", "https://www.bloomberght.com/rss", "Ekonomi"),
-            DefaultRssFeed("Dünya", "https://www.dunya.com/rss", "Ekonomi"),
+            DefaultRssFeed("CNBC", "https://www.cnbc.com/id/100003114/device/rss/rss.html", "Ekonomi"),
             
             // Spor
-            DefaultRssFeed("NTV Spor", "https://www.ntvspor.net/rss", "Spor"),
-            DefaultRssFeed("Fanatik", "https://www.fanatik.com.tr/rss/anasayfa", "Spor")
+            DefaultRssFeed("NTV Spor", "https://www.ntvspor.net/son-dakika.rss", "Spor"),
+            DefaultRssFeed("ESPN", "https://www.espn.com/espn/rss/news", "Spor"),
+            DefaultRssFeed("BBC Sport", "https://feeds.bbci.co.uk/sport/rss.xml", "Spor"),
+            
+            // Bilim
+            DefaultRssFeed("NASA", "https://www.nasa.gov/rss/dyn/breaking_news.rss", "Bilim"),
+            DefaultRssFeed("Science Daily", "https://www.sciencedaily.com/rss/all.xml", "Bilim")
         )
 
         _uiState.update { it.copy(defaultFeeds = feeds) }

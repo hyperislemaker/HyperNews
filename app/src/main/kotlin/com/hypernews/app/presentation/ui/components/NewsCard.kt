@@ -7,7 +7,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
-import androidx.compose.material.icons.outlined.ChatBubbleOutline
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -15,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -34,17 +34,21 @@ fun NewsCard(
         modifier = modifier
             .fillMaxWidth()
             .clickable(onClick = onClick),
-        shape = RoundedCornerShape(16.dp),
+        shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
     ) {
-        Column {
-            // Görsel varsa göster, yoksa gradient placeholder
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            // Sol taraf - Görsel
             Box(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .aspectRatio(16f / 9f)
-                    .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
+                    .size(90.dp)
+                    .clip(RoundedCornerShape(8.dp))
             ) {
                 if (newsItem.imageUrl != null) {
                     AsyncImage(
@@ -54,7 +58,6 @@ fun NewsCard(
                         contentScale = ContentScale.Crop
                     )
                 } else {
-                    // Placeholder gradient background
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
@@ -70,8 +73,8 @@ fun NewsCard(
                     ) {
                         Text(
                             text = newsItem.sourceName.take(2).uppercase(),
-                            style = MaterialTheme.typography.displayMedium,
-                            color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.5f)
+                            style = MaterialTheme.typography.titleLarge,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.6f)
                         )
                     }
                 }
@@ -80,131 +83,112 @@ fun NewsCard(
                 if (newsItem.isBreakingNews) {
                     Surface(
                         modifier = Modifier
-                            .padding(8.dp)
+                            .padding(4.dp)
                             .align(Alignment.TopStart),
-                        shape = RoundedCornerShape(4.dp),
+                        shape = RoundedCornerShape(3.dp),
                         color = Color(0xFFEF5350)
                     ) {
                         Text(
-                            text = "🔴 SON DAKİKA",
-                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-                            style = MaterialTheme.typography.labelSmall,
-                            color = Color.White
+                            text = "🔴",
+                            modifier = Modifier.padding(2.dp),
+                            style = MaterialTheme.typography.labelSmall
                         )
                     }
                 }
-                
-                // Kaynak etiketi sağ üstte
-                Surface(
-                    modifier = Modifier
-                        .padding(8.dp)
-                        .align(Alignment.TopEnd),
-                    shape = RoundedCornerShape(4.dp),
-                    color = MaterialTheme.colorScheme.surface.copy(alpha = 0.9f)
-                ) {
-                    Text(
-                        text = newsItem.sourceName,
-                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                }
             }
             
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text(
-                    text = newsItem.title,
-                    style = MaterialTheme.typography.titleMedium,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis
-                )
+            // Sağ taraf - İçerik
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .height(90.dp),
+                verticalArrangement = Arrangement.SpaceBetween
+            ) {
+                Column {
+                    // Başlık
+                    Text(
+                        text = newsItem.title,
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.SemiBold,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis,
+                        lineHeight = MaterialTheme.typography.titleSmall.lineHeight
+                    )
+                    
+                    Spacer(modifier = Modifier.height(4.dp))
+                    
+                    // Özet
+                    Text(
+                        text = newsItem.summary,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                }
                 
-                Spacer(modifier = Modifier.height(8.dp))
-                
-                Text(
-                    text = newsItem.summary,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    maxLines = 4,
-                    overflow = TextOverflow.Ellipsis
-                )
-                
-                Spacer(modifier = Modifier.height(12.dp))
-                
+                // Alt bilgi satırı
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(
-                        text = formatDate(newsItem.publishedDate),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                    
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        if (newsItem.commentCount > 0) {
-                            Icon(
-                                imageVector = Icons.Outlined.ChatBubbleOutline,
-                                contentDescription = "Yorumlar",
-                                modifier = Modifier.size(16.dp),
-                                tint = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                            Text(
-                                text = " ${newsItem.commentCount}",
-                                style = MaterialTheme.typography.labelSmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                            Spacer(modifier = Modifier.width(12.dp))
-                        }
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(6.dp)
+                    ) {
+                        // Kaynak
+                        Text(
+                            text = newsItem.sourceName,
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.primary,
+                            fontWeight = FontWeight.Medium
+                        )
                         
-                        IconButton(
-                            onClick = onFavoriteClick,
-                            modifier = Modifier.size(24.dp)
-                        ) {
-                            Icon(
-                                imageVector = if (newsItem.isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
-                                contentDescription = if (newsItem.isFavorite) "Favorilerden çıkar" else "Favorilere ekle",
-                                tint = if (newsItem.isFavorite) Color(0xFFEF5350) else MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
+                        Text(
+                            text = "•",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                        
+                        // Tarih
+                        Text(
+                            text = formatDate(newsItem.publishedDate),
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                    
+                    // Favori butonu
+                    IconButton(
+                        onClick = onFavoriteClick,
+                        modifier = Modifier.size(28.dp)
+                    ) {
+                        Icon(
+                            imageVector = if (newsItem.isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
+                            contentDescription = if (newsItem.isFavorite) "Favorilerden çıkar" else "Favorilere ekle",
+                            tint = if (newsItem.isFavorite) Color(0xFFEF5350) else MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.size(18.dp)
+                        )
                     }
                 }
-                
-                if (newsItem.reactionCounts.isNotEmpty()) {
-                    Spacer(modifier = Modifier.height(8.dp))
-                    ReactionSummary(reactionCounts = newsItem.reactionCounts)
-                }
             }
-        }
-    }
-}
-
-@Composable
-private fun ReactionSummary(reactionCounts: Map<com.hypernews.app.domain.model.ReactionType, Int>) {
-    Row(
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        reactionCounts.filter { it.value > 0 }.forEach { (type, count) ->
-            val emoji = when (type) {
-                com.hypernews.app.domain.model.ReactionType.LIKE -> "👍"
-                com.hypernews.app.domain.model.ReactionType.LOVE -> "❤️"
-                com.hypernews.app.domain.model.ReactionType.WOW -> "😮"
-                com.hypernews.app.domain.model.ReactionType.SAD -> "😢"
-                com.hypernews.app.domain.model.ReactionType.ANGRY -> "😠"
-                com.hypernews.app.domain.model.ReactionType.THINKING -> "🤔"
-            }
-            Text(
-                text = "$emoji $count",
-                style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
         }
     }
 }
 
 private fun formatDate(instant: Instant): String {
-    val formatter = DateTimeFormatter.ofPattern("dd MMM HH:mm")
-    return instant.atZone(ZoneId.systemDefault()).format(formatter)
+    val now = Instant.now()
+    val diff = now.epochSecond - instant.epochSecond
+    
+    return when {
+        diff < 60 -> "Az önce"
+        diff < 3600 -> "${diff / 60}dk"
+        diff < 86400 -> "${diff / 3600}sa"
+        diff < 172800 -> "Dün"
+        else -> {
+            val formatter = DateTimeFormatter.ofPattern("dd MMM")
+            instant.atZone(ZoneId.systemDefault()).format(formatter)
+        }
+    }
 }

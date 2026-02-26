@@ -1,70 +1,41 @@
-2026-02-26 12:06:31.800  9723-9723  InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
-2026-02-26 12:06:31.801  9723-9723  ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:764b6ea1: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
-2026-02-26 12:06:32.863  9723-9868  System.err              com.hypernews.app.debug              W  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-2026-02-26 12:06:32.864  9723-9868  System.err              com.hypernews.app.debug              W  SLF4J: Defaulting to no-operation (NOP) logger implementation
-2026-02-26 12:06:32.865  9723-9868  System.err              com.hypernews.app.debug              W  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-2026-02-26 12:06:33.057  9723-9729  rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 4789KB AllocSpace bytes, 6(328KB) LOS objects, 49% free, 7900KB/15MB, paused 8.639ms,3.968ms total 93.726ms
-2026-02-26 12:06:33.159  9723-9868  CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 247079863; UID 10220; state: ENABLED
-2026-02-26 12:06:33.189  9723-9723  WM-WorkSpec             com.hypernews.app.debug              W  Interval duration lesser than minimum allowed value; Changed to 900000
-2026-02-26 12:06:33.222  9723-9723  WM-PackageManagerHelper com.hypernews.app.debug              D  androidx.work.impl.background.systemjob.SystemJobService enabled
-2026-02-26 12:06:33.222  9723-9723  WM-Schedulers           com.hypernews.app.debug              D  Created SystemJobScheduler and enabled SystemJobService
-2026-02-26 12:06:33.284  9723-9875  JobInfo                 com.hypernews.app.debug              W  Requested important-while-foreground flag for job0 is ignored and takes no effect
-2026-02-26 12:06:33.285  9723-9875  CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 253665015; UID 10220; state: ENABLED
-2026-02-26 12:06:33.339  9723-9875  CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 263076149; UID 10220; state: ENABLED
-2026-02-26 12:06:34.024  9723-9875  WM-WorkerWrapper        com.hypernews.app.debug              I  Worker result SUCCESS for Work [ id=d1fcd6a4-62e3-43bc-9962-9589c00f4ff2, tags={ com.hypernews.app.worker.NewsSyncWorker } ]
-2026-02-26 12:06:34.158  9723-9903  HWUI                    com.hypernews.app.debug              W  Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
-2026-02-26 12:06:34.158  9723-9903  HWUI                    com.hypernews.app.debug              W  Failed to initialize 101010-2 format, error = EGL_SUCCESS
-2026-02-26 12:06:34.301  9723-9867  HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
-2026-02-26 12:06:34.361  9723-9868  HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
-2026-02-26 12:06:34.595   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:34.816   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:35.031   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:35.460   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:35.678   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:35.893   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:36.106   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:36.547   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:36.768   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:36.985   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:37.199   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:37.632   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:37.849   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:38.065   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:38.281   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:38.712   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:38.925   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:39.142   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:39.355   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:39.801   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:40.015   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:40.232   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:40.449   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:40.883   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:41.104   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:41.337   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:41.444  9723-9868  HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
-2026-02-26 12:06:41.563   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:42.020   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:42.251   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:42.476   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:42.713   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:43.202   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:43.430   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:43.674   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:43.901   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:44.409   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:44.630   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:44.845   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:44.856  9723-10027 DynamiteModule          com.hypernews.app.debug              W  Local module descriptor class for com.google.android.gms.providerinstaller.dynamite not found.
-2026-02-26 12:06:44.875  9723-10027 DynamiteModule          com.hypernews.app.debug              I  Considering local module com.google.android.gms.providerinstaller.dynamite:0 and remote module com.google.android.gms.providerinstaller.dynamite:0
-2026-02-26 12:06:44.877  9723-10027 ProviderInstaller       com.hypernews.app.debug              W  Failed to load providerinstaller module: No acceptable module com.google.android.gms.providerinstaller.dynamite found. Local version is 0 and remote version is 0.
-2026-02-26 12:06:44.894  9723-10027 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
-2026-02-26 12:06:44.895  9723-10027 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/com.android.location.provider.jar
-2026-02-26 12:06:44.897  9723-10027 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/com.android.media.remotedisplay.jar
-2026-02-26 12:06:44.900  9723-10027 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
-2026-02-26 12:06:44.901  9723-10027 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
-2026-02-26 12:06:44.904  9723-10027 ProviderInstaller       com.hypernews.app.debug              W  Failed to report request stats: com.google.android.gms.common.security.ProviderInstallerImpl.reportRequestStats [class android.content.Context, long, long]
-2026-02-26 12:06:44.972  9723-10029 GoogleApiManager        com.hypernews.app.debug              E  Failed to get service from broker.  (Fix with AI)
+2026-02-26 12:29:54.497 23099-23105 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 4840KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 6419KB/12MB, paused 51.233ms,5.518ms total 119.694ms
+2026-02-26 12:29:56.066 23099-23099 InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
+2026-02-26 12:29:56.066 23099-23099 ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:41497a95: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2026-02-26 12:29:57.150 23099-23278 System.err              com.hypernews.app.debug              W  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2026-02-26 12:29:57.150 23099-23278 System.err              com.hypernews.app.debug              W  SLF4J: Defaulting to no-operation (NOP) logger implementation
+2026-02-26 12:29:57.150 23099-23278 System.err              com.hypernews.app.debug              W  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2026-02-26 12:29:57.501 23099-23278 CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 247079863; UID 10222; state: ENABLED
+2026-02-26 12:29:59.167 23099-23099 WM-WorkSpec             com.hypernews.app.debug              W  Interval duration lesser than minimum allowed value; Changed to 900000
+2026-02-26 12:29:59.214 23099-23099 WM-PackageManagerHelper com.hypernews.app.debug              D  androidx.work.impl.background.systemjob.SystemJobService enabled
+2026-02-26 12:29:59.214 23099-23099 WM-Schedulers           com.hypernews.app.debug              D  Created SystemJobScheduler and enabled SystemJobService
+2026-02-26 12:29:59.267 23099-23297 JobInfo                 com.hypernews.app.debug              W  Requested important-while-foreground flag for job0 is ignored and takes no effect
+2026-02-26 12:29:59.268 23099-23297 CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 253665015; UID 10222; state: ENABLED
+2026-02-26 12:29:59.306 23099-23297 CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 263076149; UID 10222; state: ENABLED
+2026-02-26 12:30:00.062 23099-23105 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 10MB AllocSpace bytes, 2(36KB) LOS objects, 49% free, 11MB/22MB, paused 1.864ms,5.848ms total 230.773ms
+2026-02-26 12:30:00.304 23099-23321 HWUI                    com.hypernews.app.debug              W  Failed to choose config with EGL_SWAP_BEHAVIOR_PRESERVED, retrying without...
+2026-02-26 12:30:00.305 23099-23321 HWUI                    com.hypernews.app.debug              W  Failed to initialize 101010-2 format, error = EGL_SUCCESS
+2026-02-26 12:30:00.486 23099-23280 HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 12:30:00.499 23099-23278 HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 12:30:00.713 23099-23105 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 19MB AllocSpace bytes, 5(96KB) LOS objects, 49% free, 11MB/23MB, paused 1.940ms,5.346ms total 290.283ms
+2026-02-26 12:30:01.069 23099-23297 WM-WorkerWrapper        com.hypernews.app.debug              I  Worker result SUCCESS for Work [ id=3c5ff0e6-98fd-43cf-a2e0-798668b19103, tags={ com.hypernews.app.worker.NewsSyncWorker } ]
+2026-02-26 12:30:01.905 23099-23282 HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 12:30:04.044 23099-23302 HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 12:30:04.306 23099-23302 HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 12:30:04.435 23099-23105 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 9445KB AllocSpace bytes, 5(100KB) LOS objects, 49% free, 9027KB/17MB, paused 2.441ms,2.086ms total 141.054ms
+2026-02-26 12:30:04.467 23099-23302 HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 12:30:05.399 23099-23278 HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 12:30:05.726 23099-23302 HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 12:30:06.465 23099-23278 HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 12:30:07.522 23099-23344 DynamiteModule          com.hypernews.app.debug              W  Local module descriptor class for com.google.android.gms.providerinstaller.dynamite not found.
+2026-02-26 12:30:07.530 23099-23344 DynamiteModule          com.hypernews.app.debug              I  Considering local module com.google.android.gms.providerinstaller.dynamite:0 and remote module com.google.android.gms.providerinstaller.dynamite:0
+2026-02-26 12:30:07.530 23099-23344 ProviderInstaller       com.hypernews.app.debug              W  Failed to load providerinstaller module: No acceptable module com.google.android.gms.providerinstaller.dynamite found. Local version is 0 and remote version is 0.
+2026-02-26 12:30:07.534 23099-23344 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+2026-02-26 12:30:07.534 23099-23344 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/com.android.location.provider.jar
+2026-02-26 12:30:07.534 23099-23344 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system/framework/com.android.media.remotedisplay.jar
+2026-02-26 12:30:07.534 23099-23344 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+2026-02-26 12:30:07.534 23099-23344 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+2026-02-26 12:30:07.536 23099-23344 ProviderInstaller       com.hypernews.app.debug              W  Failed to report request stats: com.google.android.gms.common.security.ProviderInstallerImpl.reportRequestStats [class android.content.Context, long, long]
+2026-02-26 12:30:07.569 23099-23346 GoogleApiManager        com.hypernews.app.debug              E  Failed to get service from broker.  (Fix with AI)
                                                                                                     java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
                                                                                                     	at android.os.Parcel.createExceptionOrNull(Parcel.java:3340)
                                                                                                     	at android.os.Parcel.createException(Parcel.java:3324)
@@ -80,8 +51,9 @@
                                                                                                     	at android.os.Looper.loopOnce(Looper.java:248)
                                                                                                     	at android.os.Looper.loop(Looper.java:338)
                                                                                                     	at android.os.HandlerThread.run(HandlerThread.java:85)
-2026-02-26 12:06:44.973  9723-10029 GoogleApiManager        com.hypernews.app.debug              W  Not showing notification since connectionResult is not user-facing: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
-2026-02-26 12:06:44.979  9723-10028 FlagRegistrar           com.hypernews.app.debug              W  Failed to register com.google.android.gms.providerinstaller#com.hypernews.app.debug (Fix with AI)
+2026-02-26 12:30:07.571 23099-23346 GoogleApiManager        com.hypernews.app.debug              W  Not showing notification since connectionResult is not user-facing: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+2026-02-26 12:30:07.573 23099-23347 gabz                    com.hypernews.app.debug              I  Unable to retrieve flag snapshot for com.google.android.gms.providerinstaller#com.hypernews.app.debug, using defaults.
+2026-02-26 12:30:07.576 23099-23345 FlagRegistrar           com.hypernews.app.debug              W  Failed to register com.google.android.gms.providerinstaller#com.hypernews.app.debug (Fix with AI)
                                                                                                     gacl: 17: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
                                                                                                     	at gacn.a(:com.google.android.gms@260534038@26.05.34 (260800-869443408):13)
                                                                                                     	at gykt.d(:com.google.android.gms@260534038@26.05.34 (260800-869443408):3)
@@ -114,52 +86,71 @@
                                                                                                     	at bdwq.a(:com.google.android.gms@260534038@26.05.34 (260800-869443408):1)
                                                                                                     	at bdwn.c(:com.google.android.gms@260534038@26.05.34 (260800-869443408):5)
                                                                                                     	... 12 more
-2026-02-26 12:06:44.981  9723-10030 gabz                    com.hypernews.app.debug              I  Unable to retrieve flag snapshot for com.google.android.gms.providerinstaller#com.hypernews.app.debug, using defaults.
-2026-02-26 12:06:45.009  9723-10027 nativeloader            com.hypernews.app.debug              D  Load /data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/base.apk!/lib/x86_64/libconscrypt_gmscore_jni.so using class loader ns clns-10 (caller=/data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/base.apk): ok
-2026-02-26 12:06:45.011  9723-10027 NativeCrypto            com.hypernews.app.debug              V  Registering com/google/android/gms/org/conscrypt/NativeCrypto's 334 native methods...
-2026-02-26 12:06:45.030  9723-10027 rnews.app.debug         com.hypernews.app.debug              I  hiddenapi: Accessing hidden method Ljava/security/spec/ECParameterSpec;->getCurveName()Ljava/lang/String; (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app) using reflection: allowed
-2026-02-26 12:06:45.066  9723-10027 ProviderInstaller       com.hypernews.app.debug              I  Installed default security provider GmsCore_OpenSSL
-2026-02-26 12:06:45.096   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:45.260  9723-9729  rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 9151KB AllocSpace bytes, 9(696KB) LOS objects, 49% free, 9666KB/18MB, paused 5.159ms,8.032ms total 223.532ms
-2026-02-26 12:06:45.553  9723-10043 rnews.app.debug         com.hypernews.app.debug              I  hiddenapi: Accessing hidden field Ljava/net/Socket;->impl:Ljava/net/SocketImpl; (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app) using reflection: allowed
-2026-02-26 12:06:45.596   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:45.636  9723-10043 rnews.app.debug         com.hypernews.app.debug              I  hiddenapi: Accessing hidden method Ljava/security/spec/ECParameterSpec;->setCurveName(Ljava/lang/String;)V (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app) using reflection: allowed
-2026-02-26 12:06:45.830   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:46.062   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:46.301   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:46.849   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:47.082   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:47.304   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:47.520   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:47.950   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:48.165   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:48.379   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:48.602   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:49.041   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:49.258   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:49.475   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:49.691   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:50.128   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:50.344   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:50.559   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:50.773   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:50.911  9723-9723  WindowOnBackDispatcher  com.hypernews.app.debug              W  sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@566980b
-2026-02-26 12:06:51.233   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:51.455   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:51.687   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:51.909   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:52.367   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:52.590   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:52.818   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:53.050   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:53.521   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:53.737   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:53.949   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:53.999  9723-9728  rnews.app.debug         com.hypernews.app.debug              I  Compiler allocated 6333KB to compile void com.hypernews.app.presentation.screens.detail.NewsDetailScreenKt$NewsDetailScreen$2.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
-2026-02-26 12:06:54.186   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:54.685   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:54.914   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:54.980  9723-10029 GoogleApiManager        com.hypernews.app.debug              E  Failed to get service from broker.  (Fix with AI)
+2026-02-26 12:30:07.594 23099-23344 nativeloader            com.hypernews.app.debug              D  Load /data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/base.apk!/lib/x86_64/libconscrypt_gmscore_jni.so using class loader ns clns-10 (caller=/data/app/~~ZgIihwtPP8qDclNjxNayjQ==/com.google.android.gms-2xNnS-_em7sB140O-K6cUA==/base.apk): ok
+2026-02-26 12:30:07.596 23099-23344 NativeCrypto            com.hypernews.app.debug              V  Registering com/google/android/gms/org/conscrypt/NativeCrypto's 334 native methods...
+2026-02-26 12:30:07.624 23099-23344 rnews.app.debug         com.hypernews.app.debug              I  hiddenapi: Accessing hidden method Ljava/security/spec/ECParameterSpec;->getCurveName()Ljava/lang/String; (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app) using reflection: allowed
+2026-02-26 12:30:07.643 23099-23344 ProviderInstaller       com.hypernews.app.debug              I  Installed default security provider GmsCore_OpenSSL
+2026-02-26 12:30:08.039 23099-23362 rnews.app.debug         com.hypernews.app.debug              I  hiddenapi: Accessing hidden field Ljava/net/Socket;->impl:Ljava/net/SocketImpl; (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app) using reflection: allowed
+2026-02-26 12:30:08.126 23099-23362 rnews.app.debug         com.hypernews.app.debug              I  hiddenapi: Accessing hidden method Ljava/security/spec/ECParameterSpec;->setCurveName(Ljava/lang/String;)V (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app) using reflection: allowed
+2026-02-26 12:30:08.510 23099-23105 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 6956KB AllocSpace bytes, 10(716KB) LOS objects, 49% free, 10029KB/19MB, paused 1.372ms,3.368ms total 107.005ms
+2026-02-26 12:30:10.582 23099-23099 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153cc8e98) locale list changing from [] to [en-US]
+2026-02-26 12:30:10.582 23099-23099 WebViewFactory          com.hypernews.app.debug              I  Loading com.google.android.webview version 133.0.6943.137 (code 694313738)
+2026-02-26 12:30:10.583 23099-23099 ResourcesManager        com.hypernews.app.debug              W  Found a null ResourcesImpl, skipped.
+2026-02-26 12:30:10.583 23099-23099 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153cc0838) locale list changing from [] to [en-US]
+2026-02-26 12:30:10.583 23099-23099 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153cbb6f8) locale list changing from [] to [en-US]
+2026-02-26 12:30:10.584 23099-23099 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153cb52f8) locale list changing from [] to [en-US]
+2026-02-26 12:30:10.585 23099-23099 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153cbdc78) locale list changing from [] to [en-US]
+2026-02-26 12:30:10.586 23099-23099 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153cb9df8) locale list changing from [] to [en-US]
+2026-02-26 12:30:10.587 23099-23099 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153cb5938) locale list changing from [] to [en-US]
+2026-02-26 12:30:10.587 23099-23099 ResourcesManager        com.hypernews.app.debug              V  The following library key has been added: ResourcesKey{ mHash=ba35f556 mResDir=null mSplitDirs=[] mOverlayDirs=[] mLibDirs=[/data/app/~~uoHL1u60q2eJgqSPYbc9pw==/com.google.android.webview-bpvMOuTmsUtUb3PpbfJyLA==/WebViewGoogle.apk,/data/app/~~7g5gqnWPwbGOqrtcupMmig==/com.google.android.trichromelibrary_694313738-b55xhM7q6CIMwT38thO0Bg==/TrichromeLibrary.apk,/system_ext/framework/androidx.window.extensions.jar] mDisplayId=0 mOverrideConfig=v36 mCompatInfo={420dpi always-compat} mLoaders=[]}
+2026-02-26 12:30:10.591 23099-23099 rnews.app.debug         com.hypernews.app.debug              W  Failed to find entry 'classes.dex': Entry not found
+2026-02-26 12:30:10.593 23099-23099 nativeloader            com.hypernews.app.debug              D  Configuring clns-12 for other apk /data/app/~~7g5gqnWPwbGOqrtcupMmig==/com.google.android.trichromelibrary_694313738-b55xhM7q6CIMwT38thO0Bg==/TrichromeLibrary.apk. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~uoHL1u60q2eJgqSPYbc9pw==/com.google.android.webview-bpvMOuTmsUtUb3PpbfJyLA==/lib/x86_64:/data/app/~~uoHL1u60q2eJgqSPYbc9pw==/com.google.android.webview-bpvMOuTmsUtUb3PpbfJyLA==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~7g5gqnWPwbGOqrtcupMmig==/com.google.android.trichromelibrary_694313738-b55xhM7q6CIMwT38thO0Bg==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+2026-02-26 12:30:10.596 23099-23099 ApplicationLoaders      com.hypernews.app.debug              D  Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+2026-02-26 12:30:10.599 23099-23099 nativeloader            com.hypernews.app.debug              D  Configuring clns-13 for other apk /data/app/~~uoHL1u60q2eJgqSPYbc9pw==/com.google.android.webview-bpvMOuTmsUtUb3PpbfJyLA==/WebViewGoogle.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~uoHL1u60q2eJgqSPYbc9pw==/com.google.android.webview-bpvMOuTmsUtUb3PpbfJyLA==/lib/x86_64:/data/app/~~uoHL1u60q2eJgqSPYbc9pw==/com.google.android.webview-bpvMOuTmsUtUb3PpbfJyLA==/WebViewGoogle.apk!/lib/x86_64:/data/app/~~7g5gqnWPwbGOqrtcupMmig==/com.google.android.trichromelibrary_694313738-b55xhM7q6CIMwT38thO0Bg==/TrichromeLibrary.apk!/lib/x86_64, permitted_path=/data:/mnt/expand
+2026-02-26 12:30:10.631 23099-23099 cr_WVCFactoryProvider   com.hypernews.app.debug              I  version=133.0.6943.137 (694313738) minSdkVersion=29 isBundle=false multiprocess=true packageId=2
+2026-02-26 12:30:10.650 23099-23099 nativeloader            com.hypernews.app.debug              D  Load /data/app/~~7g5gqnWPwbGOqrtcupMmig==/com.google.android.trichromelibrary_694313738-b55xhM7q6CIMwT38thO0Bg==/TrichromeLibrary.apk!/lib/x86_64/libmonochrome_64.so using class loader ns clns-13 (caller=/data/app/~~uoHL1u60q2eJgqSPYbc9pw==/com.google.android.webview-bpvMOuTmsUtUb3PpbfJyLA==/WebViewGoogle.apk): ok
+2026-02-26 12:30:10.655 23099-23099 nativeloader            com.hypernews.app.debug              D  Load /system/lib64/libwebviewchromium_plat_support.so using class loader ns clns-13 (caller=/data/app/~~uoHL1u60q2eJgqSPYbc9pw==/com.google.android.webview-bpvMOuTmsUtUb3PpbfJyLA==/WebViewGoogle.apk): ok
+2026-02-26 12:30:10.660 23099-23369 chromium                com.hypernews.app.debug              I  [0226/093010.659792:INFO:variations_seed_loader.cc(67)] Failed to open file for reading.: No such file or directory (2)
+2026-02-26 12:30:10.660 23099-23369 chromium                com.hypernews.app.debug              I  [0226/093010.660890:INFO:variations_seed_loader.cc(67)] Failed to open file for reading.: No such file or directory (2)
+2026-02-26 12:30:10.667 23099-23099 cr_LibraryLoader        com.hypernews.app.debug              I  Successfully loaded native library
+2026-02-26 12:30:10.667 23099-23099 cr_CachingUmaRecorder   com.hypernews.app.debug              I  Flushed 6 samples from 6 histograms, 0 samples were dropped.
+2026-02-26 12:30:10.671 23099-23099 cr_CombinedPProvider    com.hypernews.app.debug              I  #registerProvider() provider:WV.C8@7578503 isPolicyCacheEnabled:false policyProvidersSize:0
+2026-02-26 12:30:10.696 23099-23099 cr_PolicyProvider       com.hypernews.app.debug              I  #setManagerAndSource() 0
+2026-02-26 12:30:10.714 23099-23099 cr_CombinedPProvider    com.hypernews.app.debug              I  #linkNativeInternal() 1
+2026-02-26 12:30:10.717 23099-23099 cr_AppResProvider       com.hypernews.app.debug              I  #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+2026-02-26 12:30:10.717 23099-23099 cr_PolicyProvider       com.hypernews.app.debug              I  #notifySettingsAvailable() 0
+2026-02-26 12:30:10.717 23099-23099 cr_CombinedPProvider    com.hypernews.app.debug              I  #onSettingsAvailable() 0
+2026-02-26 12:30:10.717 23099-23099 cr_CombinedPProvider    com.hypernews.app.debug              I  #flushPolicies()
+2026-02-26 12:30:10.769 23099-23099 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153cabcf8) locale list changing from [] to [en-US]
+2026-02-26 12:30:10.775 23099-23099 rnews.app.debug         com.hypernews.app.debug              I  AssetManager2(0x7dc153cc0b58) locale list changing from [] to [en-US]
+2026-02-26 12:30:10.979 23099-23391 cr_media                com.hypernews.app.debug              W  BLUETOOTH_CONNECT permission is missing.
+2026-02-26 12:30:10.988 23099-23439 libc                    com.hypernews.app.debug              W  Access denied finding property "vendor.mesa.log"
+2026-02-26 12:30:10.988 23099-23439 libc                    com.hypernews.app.debug              W  Access denied finding property "vendor.mesa.log.file"
+2026-02-26 12:30:10.989 23099-23439 MESA                    com.hypernews.app.debug              E  Failed to open rendernode: No such file or directory
+2026-02-26 12:30:11.002 23099-23391 cr_media                com.hypernews.app.debug              W  getBluetoothAdapter() requires BLUETOOTH permission
+2026-02-26 12:30:11.002 23099-23391 cr_media                com.hypernews.app.debug              W  registerBluetoothIntentsIfNeeded: Requires BLUETOOTH permission
+2026-02-26 12:30:11.061 23099-23439 libc                    com.hypernews.app.debug              W  Access denied finding property "vendor.mesa.vk.trace.per.submit"
+2026-02-26 12:30:11.061 23099-23439 libc                    com.hypernews.app.debug              W  Access denied finding property "vendor.mesa.gallium.print.optio"
+2026-02-26 12:30:11.061 23099-23439 libc                    com.hypernews.app.debug              W  Access denied finding property "vendor.mesa.vk.trace.frame"
+2026-02-26 12:30:11.068 23099-23439 libc                    com.hypernews.app.debug              W  Access denied finding property "vendor.mesa.vk.wsi.headless.swa"
+2026-02-26 12:30:11.179 23099-23439 chromium                com.hypernews.app.debug              W  [WARNING:viz_main_impl.cc(85)] VizNullHypothesis is disabled (not a warning)
+2026-02-26 12:30:11.186 23099-23458 CameraManagerGlobal     com.hypernews.app.debug              I  Connecting to camera service
+2026-02-26 12:30:11.203 23099-23099 Choreographer           com.hypernews.app.debug              I  Skipped 38 frames!  The application may be doing too much work on its main thread.
+2026-02-26 12:30:13.739 23099-23099 chromium                com.hypernews.app.debug              I  [INFO:CONSOLE(1)] "Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled or not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters", source: https://imgrosetta.webtekno.com/static/production/js/swiper-core.js (1)
+2026-02-26 12:30:13.768 23099-23099 chromium                com.hypernews.app.debug              I  [INFO:CONSOLE(1448)] "InfiniteScroll initialized successfully", source: https://www.webtekno.com/samsung-galaxy-s26-ultra-hayalet-ekran-ozelligi-nasil-calisiyor-h212946.html (1448)
+2026-02-26 12:30:13.777 23099-23099 chromium                com.hypernews.app.debug              I  [INFO:CONSOLE(269)] "GA4Events initialize ediliyor...", source: https://imgrosetta.webtekno.com/static/production/js/main2.js?v=mltcbxs3 (269)
+2026-02-26 12:30:14.276 23099-23099 WindowOnBackDispatcher  com.hypernews.app.debug              W  sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@648e289
+2026-02-26 12:30:14.562 23099-23104 rnews.app.debug         com.hypernews.app.debug              I  Compiler allocated 5908KB to compile void com.hypernews.app.presentation.screens.detail.NewsDetailScreenKt$NewsDetailScreen$2.invoke(androidx.compose.foundation.layout.PaddingValues, androidx.compose.runtime.Composer, int)
+2026-02-26 12:30:14.572 23099-23105 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 8107KB AllocSpace bytes, 15(556KB) LOS objects, 49% free, 11MB/23MB, paused 25.564ms,17.776ms total 181.172ms
+2026-02-26 12:30:16.276 23099-23099 chromium                com.hypernews.app.debug              I  [INFO:CONSOLE(512)] "Permissions policy violation: accelerometer is not allowed in this document.", source: https://www.youtube.com/s/player/4e67f8a0/player_embed_es6.vflset/en_US/base.js (512)
+2026-02-26 12:30:16.276 23099-23099 chromium                com.hypernews.app.debug              I  [INFO:CONSOLE(512)] "The deviceorientation events are blocked by permissions policy. See https://github.com/w3c/webappsec-permissions-policy/blob/master/features.md#sensor-features", source: https://www.youtube.com/s/player/4e67f8a0/player_embed_es6.vflset/en_US/base.js (512)
+2026-02-26 12:30:16.285 23099-23099 HWUI                    com.hypernews.app.debug              W  Image decoding logging dropped!
+2026-02-26 12:30:16.394 23099-23099 NavController           com.hypernews.app.debug              I  Ignoring popBackStack to destination -1457927832 as it was not found on the current back stack
+2026-02-26 12:30:17.294 23099-23391 AudioSystem             com.hypernews.app.debug              D  onNewServiceWithAdapter: media.audio_flinger service obtained 0x7dc1a3d52590
+2026-02-26 12:30:17.294 23099-23391 AudioSystem             com.hypernews.app.debug              D  getService: checking for service media.audio_flinger: 0x7dc233cd8860
+2026-02-26 12:30:17.303 23099-23391 AudioSystem             com.hypernews.app.debug              D  onNewService: media.audio_policy service obtained 0x7dc233cda020
+2026-02-26 12:30:17.306 23099-23391 AudioSystem             com.hypernews.app.debug              D  getService: checking for service media.audio_policy: 0x7dc233cda020
+2026-02-26 12:30:17.576 23099-23346 GoogleApiManager        com.hypernews.app.debug              E  Failed to get service from broker.  (Fix with AI)
                                                                                                     java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
                                                                                                     	at android.os.Parcel.createExceptionOrNull(Parcel.java:3340)
                                                                                                     	at android.os.Parcel.createException(Parcel.java:3324)
@@ -175,53 +166,146 @@
                                                                                                     	at android.os.Looper.loopOnce(Looper.java:248)
                                                                                                     	at android.os.Looper.loop(Looper.java:338)
                                                                                                     	at android.os.HandlerThread.run(HandlerThread.java:85)
-2026-02-26 12:06:54.981  9723-10029 GoogleApiManager        com.hypernews.app.debug              W  Not showing notification since connectionResult is not user-facing: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
-2026-02-26 12:06:55.138   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:55.359   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:55.791   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:56.010   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:56.225   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:56.377  9723-9723  WindowOnBackDispatcher  com.hypernews.app.debug              W  sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@566980b
-2026-02-26 12:06:56.450   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:56.963   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:57.187   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:57.418   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:57.640   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:58.106   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:58.352   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:58.580   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:58.811   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:59.246   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:59.460   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:59.674   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:06:59.894   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:00.350   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:00.565   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:00.783   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:01.003   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:01.436   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:01.648   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:01.859   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:02.071   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:02.502   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:02.722   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:02.936   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:03.156   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:03.598   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:03.816   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:04.034   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:04.249   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:04.682   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:04.895   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:05.109   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:05.321   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:05.757   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:05.979   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:06.196   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:06.410   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:06.857   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:07.074   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:07.295   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:07.513   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:07.958   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
-2026-02-26 12:07:08.178   736-736   NotifAttentionHelper    system_server                        E  Muting recently noisy 0|com.hypernews.app.debug|0|null|10220
+2026-02-26 12:30:17.577 23099-23346 GoogleApiManager        com.hypernews.app.debug              W  Not showing notification since connectionResult is not user-facing: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+2026-02-26 12:30:17.689 23099-23099 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] StandardIntegrity : warmUpIntegrityToken(868618676952)
+2026-02-26 12:30:17.691 23099-23737 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] StandardIntegrity : Initiate binding to the service.
+2026-02-26 12:30:17.730 23099-23099 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] StandardIntegrity : ServiceConnectionImpl.onServiceConnected(ComponentInfo{com.android.vending/com.google.android.finsky.expressintegrityservice.ExpressIntegrityService})
+2026-02-26 12:30:17.730 23099-23737 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] StandardIntegrity : linkToDeath
+2026-02-26 12:30:18.111 23099-23391 cr_media                com.hypernews.app.debug              W  Requires MODIFY_AUDIO_SETTINGS and RECORD_AUDIO. No audio device will be available for recording
+2026-02-26 12:30:18.250 23099-23112 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] OnWarmUpIntegrityTokenCallback : onWarmUpExpressIntegrityToken
+2026-02-26 12:30:18.271 23099-23737 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] StandardIntegrity : Unbind from service.
+2026-02-26 12:30:18.782 23099-23458 cr_VideoCapture         com.hypernews.app.debug              E  getCameraCharacteristics:  (Fix with AI)
+                                                                                                    java.lang.IllegalArgumentException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2)
+                                                                                                    	at android.hardware.camera2.utils.ExceptionUtils.throwAsPublicException(ExceptionUtils.java:66)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:790)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:736)
+                                                                                                    	at WV.cY.o(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:15)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.isLegacyOrDeprecatedDevice(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.getDeviceName(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    Caused by: android.os.ServiceSpecificException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2) (code 3)
+                                                                                                    	at android.os.Parcel.createExceptionOrNull(Parcel.java:3354)
+                                                                                                    	at android.os.Parcel.createException(Parcel.java:3324)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3307)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3249)
+                                                                                                    	at android.hardware.ICameraService$Stub$Proxy.getCameraCharacteristics(ICameraService.java:1175)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:782)
+                                                                                                    	... 4 more
+2026-02-26 12:30:18.811 23099-23458 cr_VideoCapture         com.hypernews.app.debug              E  getCameraCharacteristics:  (Fix with AI)
+                                                                                                    java.lang.IllegalArgumentException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2)
+                                                                                                    	at android.hardware.camera2.utils.ExceptionUtils.throwAsPublicException(ExceptionUtils.java:66)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:790)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:736)
+                                                                                                    	at WV.cY.o(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:15)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.isLegacyOrDeprecatedDevice(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.getDeviceId(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    Caused by: android.os.ServiceSpecificException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2) (code 3)
+                                                                                                    	at android.os.Parcel.createExceptionOrNull(Parcel.java:3354)
+                                                                                                    	at android.os.Parcel.createException(Parcel.java:3324)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3307)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3249)
+                                                                                                    	at android.hardware.ICameraService$Stub$Proxy.getCameraCharacteristics(ICameraService.java:1175)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:782)
+                                                                                                    	... 4 more
+2026-02-26 12:30:18.821 23099-23458 cr_VideoCapture         com.hypernews.app.debug              E  getCameraCharacteristics:  (Fix with AI)
+                                                                                                    java.lang.IllegalArgumentException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2)
+                                                                                                    	at android.hardware.camera2.utils.ExceptionUtils.throwAsPublicException(ExceptionUtils.java:66)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:790)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:736)
+                                                                                                    	at WV.cY.o(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:15)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.isLegacyOrDeprecatedDevice(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.getCaptureApiType(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    Caused by: android.os.ServiceSpecificException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2) (code 3)
+                                                                                                    	at android.os.Parcel.createExceptionOrNull(Parcel.java:3354)
+                                                                                                    	at android.os.Parcel.createException(Parcel.java:3324)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3307)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3249)
+                                                                                                    	at android.hardware.ICameraService$Stub$Proxy.getCameraCharacteristics(ICameraService.java:1175)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:782)
+                                                                                                    	... 4 more
+2026-02-26 12:30:18.842 23099-23458 cr_VideoCapture         com.hypernews.app.debug              E  getCameraCharacteristics:  (Fix with AI)
+                                                                                                    java.lang.IllegalArgumentException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2)
+                                                                                                    	at android.hardware.camera2.utils.ExceptionUtils.throwAsPublicException(ExceptionUtils.java:66)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:790)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:736)
+                                                                                                    	at WV.cY.o(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:15)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.isLegacyOrDeprecatedDevice(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.getFacingMode(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    Caused by: android.os.ServiceSpecificException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2) (code 3)
+                                                                                                    	at android.os.Parcel.createExceptionOrNull(Parcel.java:3354)
+                                                                                                    	at android.os.Parcel.createException(Parcel.java:3324)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3307)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3249)
+                                                                                                    	at android.hardware.ICameraService$Stub$Proxy.getCameraCharacteristics(ICameraService.java:1175)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:782)
+                                                                                                    	... 4 more
+2026-02-26 12:30:18.855 23099-23099 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] StandardIntegrity : requestExpressIntegrityToken(-3186452773910482919)
+2026-02-26 12:30:18.859 23099-23737 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] StandardIntegrity : Initiate binding to the service.
+2026-02-26 12:30:18.881 23099-23458 cr_VideoCapture         com.hypernews.app.debug              E  getCameraCharacteristics:  (Fix with AI)
+                                                                                                    java.lang.IllegalArgumentException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2)
+                                                                                                    	at android.hardware.camera2.utils.ExceptionUtils.throwAsPublicException(ExceptionUtils.java:66)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:790)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:736)
+                                                                                                    	at WV.cY.o(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:15)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.isLegacyOrDeprecatedDevice(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.isZoomSupported(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    Caused by: android.os.ServiceSpecificException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2) (code 3)
+                                                                                                    	at android.os.Parcel.createExceptionOrNull(Parcel.java:3354)
+                                                                                                    	at android.os.Parcel.createException(Parcel.java:3324)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3307)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3249)
+                                                                                                    	at android.hardware.ICameraService$Stub$Proxy.getCameraCharacteristics(ICameraService.java:1175)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:782)
+                                                                                                    	... 4 more
+2026-02-26 12:30:18.891 23099-23458 cr_VideoCapture         com.hypernews.app.debug              E  getCameraCharacteristics:  (Fix with AI)
+                                                                                                    java.lang.IllegalArgumentException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2)
+                                                                                                    	at android.hardware.camera2.utils.ExceptionUtils.throwAsPublicException(ExceptionUtils.java:66)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:790)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:736)
+                                                                                                    	at WV.cY.o(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:15)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.isLegacyOrDeprecatedDevice(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    	at org.chromium.media.VideoCaptureFactory.getDeviceSupportedFormats(chromium-TrichromeWebViewGoogle6432.aab-stable-694313738:1)
+                                                                                                    Caused by: android.os.ServiceSpecificException: getCameraCharacteristics:1333: Unable to retrieve camera characteristics for unknown device 0: No such file or directory (-2) (code 3)
+                                                                                                    	at android.os.Parcel.createExceptionOrNull(Parcel.java:3354)
+                                                                                                    	at android.os.Parcel.createException(Parcel.java:3324)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3307)
+                                                                                                    	at android.os.Parcel.readException(Parcel.java:3249)
+                                                                                                    	at android.hardware.ICameraService$Stub$Proxy.getCameraCharacteristics(ICameraService.java:1175)
+                                                                                                    	at android.hardware.camera2.CameraManager.getCameraCharacteristics(CameraManager.java:782)
+                                                                                                    	... 4 more
+2026-02-26 12:30:18.926 23099-23099 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] StandardIntegrity : ServiceConnectionImpl.onServiceConnected(ComponentInfo{com.android.vending/com.google.android.finsky.expressintegrityservice.ExpressIntegrityService})
+2026-02-26 12:30:18.927 23099-23737 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] StandardIntegrity : linkToDeath
+2026-02-26 12:30:18.951 23099-23232 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] OnRequestIntegrityTokenCallback : onRequestExpressIntegrityToken
+2026-02-26 12:30:18.953 23099-23737 PlayCore                com.hypernews.app.debug              I  UID: [10222]  PID: [23099] StandardIntegrity : Unbind from service.
+2026-02-26 12:30:19.098 23099-23099 chromium                com.hypernews.app.debug              I  [INFO:CONSOLE(194)] "Unrecognized feature: 'web-share'.", source: https://www.youtube.com/s/player/4e67f8a0/www-widgetapi.vflset/www-widgetapi.js (194)
+2026-02-26 12:30:19.527 23099-23105 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 11MB AllocSpace bytes, 1(24KB) LOS objects, 49% free, 12MB/24MB, paused 4.527ms,4.250ms total 114.275ms
+2026-02-26 12:30:19.530 23099-23106 JavaBinder              com.hypernews.app.debug              W  BinderProxy is being destroyed but the application did not call unlinkToDeath to unlink all of its death recipients beforehand.  Releasing leaked death recipient: WV.gO
+2026-02-26 12:30:19.530 23099-23106 JavaBinder              com.hypernews.app.debug              W  BinderProxy is being destroyed but the application did not call unlinkToDeath to unlink all of its death recipients beforehand.  Releasing leaked death recipient: WV.gO
+2026-02-26 12:30:19.530 23099-23106 BpBinder                com.hypernews.app.debug              I  onLastStrongRef automatically unlinking death recipients: 
+2026-02-26 12:30:19.922 23099-23394 chromium                com.hypernews.app.debug              W  [WARNING:spdy_session.cc(2980)] Received HEADERS for invalid stream 1
+2026-02-26 12:30:20.040 23099-23099 chromium                com.hypernews.app.debug              E  [ERROR:aw_browser_terminator.cc(165)] Renderer process (23374) crash detected (code -1).
+2026-02-26 12:30:24.348 23099-23099 CompatChangeReporter    com.hypernews.app.debug              D  Compat change id reported: 289878283; UID 10222; state: ENABLED
+2026-02-26 12:30:24.529 23099-23099 InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
+2026-02-26 12:30:24.531 23099-23099 ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:6a8d0386: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2026-02-26 12:30:25.117 23099-23099 WindowOnBackDispatcher  com.hypernews.app.debug              W  sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@288122b
+2026-02-26 12:30:25.202 23099-23099 InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
+2026-02-26 12:30:25.202 23099-23099 ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:7bdc86a9: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2026-02-26 12:30:26.207 23099-23099 InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
+2026-02-26 12:30:26.207 23099-23099 ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:109abc29: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2026-02-26 12:30:29.533 23099-23099 WindowOnBackDispatcher  com.hypernews.app.debug              W  sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@74e6cd
+2026-02-26 12:30:29.572 23099-23099 InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
+2026-02-26 12:30:29.572 23099-23099 ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:dde49f83: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2026-02-26 12:30:33.996 23099-23099 InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
+2026-02-26 12:30:33.997 23099-23099 ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:82f8ce6b: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2026-02-26 12:30:35.065 23099-23099 WindowOnBackDispatcher  com.hypernews.app.debug              W  sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@55ab74c
+2026-02-26 12:30:35.111 23099-23099 InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
+2026-02-26 12:30:35.111 23099-23099 ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:77021d62: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2026-02-26 12:30:35.958 23099-23099 InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
+2026-02-26 12:30:35.958 23099-23099 ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:30efb6e1: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2026-02-26 12:30:36.888 23099-23099 WindowOnBackDispatcher  com.hypernews.app.debug              W  sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@61cb715
+2026-02-26 12:30:36.894 23099-23149 HWUI                    com.hypernews.app.debug              D  endAllActiveAnimators on 0x7dc193d52ec0 (UnprojectedRipple) with handle 0x7dc1a3d65310
+2026-02-26 12:30:36.944 23099-23099 InsetsController        com.hypernews.app.debug              D  hide(ime(), fromIme=false)
+2026-02-26 12:30:36.945 23099-23099 ImeTracker              com.hypernews.app.debug              I  com.hypernews.app.debug:62e25920: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+2026-02-26 12:30:38.028 23099-23099 NavController           com.hypernews.app.debug              I  Ignoring popBackStack to destination -1457927832 as it was not found on the current back stack
+2026-02-26 12:30:38.380 23099-23105 rnews.app.debug         com.hypernews.app.debug              W  Cleared Reference was only reachable from finalizer (only reported once)
+2026-02-26 12:30:38.457 23099-23105 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 12MB AllocSpace bytes, 5(104KB) LOS objects, 49% free, 19MB/38MB, paused 2.853ms,5.132ms total 120.123ms
+2026-02-26 12:30:39.153 23099-23105 rnews.app.debug         com.hypernews.app.debug              I  Background concurrent mark compact GC freed 28MB AllocSpace bytes, 5(96KB) LOS objects, 49% free, 15MB/31MB, paused 1.939ms,5.425ms total 88.538ms

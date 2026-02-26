@@ -56,8 +56,8 @@ fun NewsFeedScreen(
                 }
                 else -> {
                     LazyColumn(
-                        contentPadding = PaddingValues(16.dp),
-                        verticalArrangement = Arrangement.spacedBy(16.dp)
+                        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         if (uiState.isOffline) {
                             item {
@@ -67,9 +67,9 @@ fun NewsFeedScreen(
                                     shape = MaterialTheme.shapes.small
                                 ) {
                                     Text(
-                                        text = "📴 Çevrimdışı mod - Önbellekteki haberler gösteriliyor",
-                                        modifier = Modifier.padding(12.dp),
-                                        style = MaterialTheme.typography.bodySmall
+                                        text = "📴 Çevrimdışı mod",
+                                        modifier = Modifier.padding(8.dp),
+                                        style = MaterialTheme.typography.labelSmall
                                     )
                                 }
                             }
@@ -88,10 +88,10 @@ fun NewsFeedScreen(
                                 Box(
                                     modifier = Modifier
                                         .fillMaxWidth()
-                                        .padding(16.dp),
+                                        .padding(8.dp),
                                     contentAlignment = Alignment.Center
                                 ) {
-                                    CircularProgressIndicator(modifier = Modifier.size(24.dp))
+                                    CircularProgressIndicator(modifier = Modifier.size(20.dp))
                                 }
                             }
                         }
